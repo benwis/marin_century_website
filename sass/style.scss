@@ -416,8 +416,12 @@
         }
 
         footer {
-            background-color: #eee;
+            background-color: var(--color-2);
             min-height: 200px;
+        }
+
+        footer a{
+            color: white;
         }
 
         .site-column {
