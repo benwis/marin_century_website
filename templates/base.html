@@ -33,7 +33,20 @@
     />
     <link rel="stylesheet" href="/style.css" />
   </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-D8T7SPST03"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
+    gtag("config", "G-D8T7SPST03");
+  </script>
   <body>
     <section class="section">
       <div class="container">{% block content %} {% endblock content %}</div>
