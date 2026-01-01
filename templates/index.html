@@ -1,659 +1,1013 @@
-{% extends "base.html" %}
-
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <header>
-    <div id="header__notices">Marin Century 2026 is on August 1st! &rarr;</div>
-    <div id="header__main">
-        <div id="header__mobile-menu">
+  <div id="header__notices">Marin Century 2026 is on August 1st! &rarr;</div>
+  <div id="header__main">
+    <div id="header__mobile-menu">
+      <div id="header__logo-mobile">
+        <img src="img/marin_century_stacked.png" />
+      </div>
 
-            <div id="header__logo-mobile">
-        <img src="img/marin_century_stacked.png">
-            </div>
+      <input type="checkbox" name="menu-toggle" id="menu-toggle" />
 
-            <input type="checkbox" name="menu-toggle" id="menu-toggle">
+      <label for="menu-toggle" id="menu-toggle-label">
+        <svg
+          id="show-menu-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 17h-12v-2h12v2zm0-4h-12v-2h12v2zm0-4h-12v-2h12v2z"
+          />
+        </svg>
+        <svg
+          id="hide-menu-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.151 17.943l-4.143-4.102-4.117 4.159-1.833-1.833 4.104-4.157-4.162-4.119 1.833-1.833 4.155 4.102 4.106-4.16 1.849 1.849-4.1 4.141 4.157 4.104-1.849 1.849z"
+          />
+        </svg>
+        <div id="hide-menu-shadow"></div>
+      </label>
 
-
-            <label for="menu-toggle" id="menu-toggle-label">
-                <svg id="show-menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                    <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 17h-12v-2h12v2zm0-4h-12v-2h12v2zm0-4h-12v-2h12v2z"/>
-                </svg>
-                <svg id="hide-menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                    <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.151 17.943l-4.143-4.102-4.117 4.159-1.833-1.833 4.104-4.157-4.162-4.119 1.833-1.833 4.155 4.102 4.106-4.16 1.849 1.849-4.1 4.141 4.157 4.104-1.849 1.849z"/>
-                </svg>
-                <div id="hide-menu-shadow"></div>
-            </label>
-
-            <nav id="header__mobile-nav">
-                <ul id="header__mobile-nav-list">
-                        <li><a href="#routes">Routes</a></li>
-                        <li><a href="#ride-details">Ride Details</a></li>
-                        <li><a href="#volunteering">Volunteering</a></li>
-                        <li><a href="#sponsors">Sponsors</a></li>
-                    <li><a href="#accomodations">Accomodations</a></li>
-                    <li><a href="#merch" class="highlight">Merchandise</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="https://marincentury.redpodium.com/2026-marin-century">Register</a></li>
-                </ul>
-            </nav>
-
-        </div>
-        <div id="header__desktop-menu">
-
-                <nav id="header__desktop-nav">
-
-                    <ul id="header__nav-left" class="header__nav-list">
-                        <li><a href="#routes">Routes</a></li>
-                        <li><a href="#ride-details">Ride Details</a></li>
-                        <li><a href="#volunteering">Volunteering</a></li>
-                        <li><a href="#sponsors">Sponsors</a></li>
-                    </ul>
-                    <div id="header__logo">
-        <img width="150" src="img/marin_century_stacked.png">
-          </div>
-<div>
-                    <ul id="header__nav-right" class="header__nav-list">
-                        <li><a href="#accomodations">Accomodations</a></li>
-                    <li><a href="#merch" class="highlight">Merchandise</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="https://marincentury.redpodium.com/2026-marin-century">Register</a></li>
-                    </ul>
-                </nav>
-
-        </div>
+      <nav id="header__mobile-nav">
+        <ul id="header__mobile-nav-list">
+          <li><a href="#routes">Routes</a></li>
+          <li><a href="#ride-details">Ride Details</a></li>
+          <li><a href="#volunteering">Volunteering</a></li>
+          <li><a href="#sponsors">Sponsors</a></li>
+          <li><a href="#accomodations">Accomodations</a></li>
+          <li><a href="#merch" class="highlight">Merchandise</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li>
+            <a href="https://marincentury.redpodium.com/2026-marin-century"
+              >Register</a
+            >
+          </li>
+        </ul>
+      </nav>
     </div>
+    <div id="header__desktop-menu">
+      <nav id="header__desktop-nav">
+        <ul id="header__nav-left" class="header__nav-list">
+          <li><a href="#routes">Routes</a></li>
+          <li><a href="#ride-details">Ride Details</a></li>
+          <li><a href="#volunteering">Volunteering</a></li>
+          <li><a href="#sponsors">Sponsors</a></li>
+        </ul>
+        <div id="header__logo">
+          <img width="150" src="img/marin_century_stacked.png" />
+        </div>
+        <ul id="header__nav-right" class="header__nav-list">
+          <li><a href="#accomodations">Accomodations</a></li>
+          <li><a href="#merch" class="highlight">Merchandise</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li>
+            <a href="https://marincentury.redpodium.com/2026-marin-century"
+              >Register</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
 </header>
 <section id="hero">
-    <img id="hero__image" src="/img/MC24_ChilenoJerseys.jpg"/>
+  <img id="hero__image" src="/img/MC24_ChilenoJerseys.jpg" />
 </section>
 <section id="welcome">
-    <div class="site-column">
-        <h1>Let's Ride!</h1>
-        <div class="layout-2col">
-            <div>
-                <p>
-                    For 63 years, the Marin Cyclists Club has strived to make the Marin Century the gold standard, setting the bar for cycling events. 
-
-                     We offer you an incredible bike ride on amazing roads, starting and finishing at beautiful Stafford Lake Park in Novato, followed by a party extravaganza.
-                </p>
+  <div class="site-column">
+    <h1>Let's Ride!</h1>
+    <div class="layout-2col">
+      <div>
         <p>
-                    Choose one of FIVE scenic routes ranging from 37 to 127 miles. We prioritize your safety, provide premium support, supply specialty foods, serve craft beer, and showcase live musicians. Prepare to be impressed by the service, perks, and freebies. 
+          For 63 years, the Marin Cyclists Club has strived to make the Marin
+          Century the gold standard, setting the bar for cycling events. We
+          offer you an incredible bike ride on amazing roads, starting and
+          finishing at beautiful Stafford Lake Park in Novato, followed by a
+          party extravaganza.
         </p>
         <p>
-          The Marin Cyclists Club, an all volunteer, non-profit organization, donates the proceeds to local community and bicycle related charities, totalling over $625,000 in the last 20 years.﻿
-                </p>
-            </div>
-            <div>
+          Choose one of FIVE scenic routes ranging from 37 to 127 miles. We
+          prioritize your safety, provide premium support, supply specialty
+          foods, serve craft beer, and showcase live musicians. Prepare to be
+          impressed by the service, perks, and freebies.
+        </p>
+        <p>
+          The Marin Cyclists Club, an all volunteer, non-profit organization,
+          donates the proceeds to local community and bicycle related charities,
+          totalling over $625,000 in the last 20 years.﻿
+        </p>
+      </div>
+      <div>
+        <h3>The Century includes:</h3>
+        <ul>
+          <li>Your choice of five well marked courses (37-127 miles)</li>
+          <li>Optional Mass starts for each route</li>
+          <li>Multiple well spaced and stocked rest stops.</li>
+          <li>Certified mechanics at the start and most rest stops</li>
+          <li>First aid providers</li>
+          <li><a href="#and-more"> and more!</a></li>
+        </ul>
 
-                <h3>The Century includes:</h3>
-                <ul>
-                    <li>Your choice of five well marked courses (37-127 miles)</li>
-                    <li>Optional Mass starts for each route</li>
-                    <li>Multiple well spaced and stocked rest stops.</li>
-                    <li>Certified mechanics at the start and most rest stops</li>
-                    <li>First aid providers</li>
-                    <li><a href="#and-more"> and more!</a></li>
-                </ul>
-
-                <a class="button" href="https://marincentury.redpodium.com/2026-marin-century">Register</a>
-
-
-            </div>
-        </div>
+        <a
+          class="button"
+          href="https://marincentury.redpodium.com/2026-marin-century"
+          >Register</a
+        >
+      </div>
     </div>
+  </div>
 </section>
 
 <section id="routes">
-    <div class="site-column">
-        <div>
-            <h2>Routes</h2>
+  <div class="site-column">
+    <div>
+      <h2>Routes</h2>
+    </div>
+
+    <div id="club-rides__items" class="layout-2col">
+      <div class="ride">
+        <iframe
+          src="https://ridewithgps.com/embeds?type=route&id=52232338&title=Geronimo&sampleGraph=true"
+          style="width: 1px; min-width: 100%; height: 700px; border: none"
+          scrolling="no"
+        ></iframe>
+      </div>
+
+      <div class="ride">
+        <h4 class="ride__heading">
+          <span class="ride__day_of_the_week">Geronimo</span> (37 miles/2269 ft)
+        </h4>
+        <div class="ride__extras">
+          <p>
+            If sixty miles sounds like too much for you this year, but you want
+            to participate and you want to earn the after-ride Party
+            extravaganza, then we have just the right course for you, the 37
+            mile, (60 Km) Geronimo. Ride west on Novato Blvd from Stafford Lake
+            Park and head to the beautiful, rural, San Geronimo Valley (hence
+            the name of this route) and Nicasio Valley Reservoir. Complete the
+            clockwise loop under the towering Redwood Trees of Samuel P. Taylor
+            State Park then return over the punchy hill, “Col de Fromage,” to
+            the finish line. We will treat you to a great rest stop at mile 18,
+            complete with a musicians, mechanics, lots of food and drinks of all
+            kinds. We will also have two additional water stops. We won’t sugar
+            coat it, this route has some climbing, with a total elevation gain
+            of 2,269 feet, but don’t worry, we got you!
+          </p>
         </div>
+      </div>
 
-        <div id="club-rides__items" class="layout-2col">
-
-
-            <div class="ride">
-<iframe src="https://ridewithgps.com/embeds?type=route&id=52232338&title=Geronimo&sampleGraph=true" style="width: 1px; min-width: 100%; height: 700px; border: none;" scrolling="no"></iframe>
-            </div>
-
-
-            <div class="ride">
-                <h4 class="ride__heading"><span class="ride__day_of_the_week">Geronimo</span> (37 miles/2269 ft)</h4>
-                <div class="ride__extras">
-                    <p>
-                        If sixty miles sounds like too much for you this year, but you want to participate and you want to earn the after-ride Party extravaganza, then we have just the right course for you, the 37 mile, (60 Km) Geronimo. Ride west on Novato Blvd from Stafford Lake Park and head to the beautiful, rural, San Geronimo Valley (hence the name of this route) and Nicasio Valley Reservoir. Complete the clockwise loop under the towering Redwood Trees of Samuel P. Taylor State Park then return over the punchy hill, “Col de Fromage,” to the finish line. We will treat you to a great rest stop at mile 18, complete with a musicians, mechanics, lots of food and drinks of all kinds. We will also have two additional water stops.. We won’t sugar coat it, this route has some climbing, with a total elevation gain of 2,269 feet, but don’t worry, we got you!
-                    </p>
-                </div>
-            </div>
-
-
-            <div class="ride">
-                <h4 class="ride__heading"><span class="ride__day_of_the_week">Metric Century</span> (63.5 mi 102 km / 4300 ft)</h4>
-                <div class="ride__extras">
-                    <p>
-                  The Metric Century is a 63-mile ( 102 km) course that travels through lovely West Marin in a clockwise direction.  Climb up out of Stafford Lake Park, passing by cows to reach the ever pretty Nicasio Valley Reservoir. Stop for a break before Pt Reyes Station, then head north on Highway 1 marveling at the scenic water views of Tomales Bay and on to the country town park of Tomales, for a rest and some live music.  Flow through the pastoral farm lands on the favorite local bikers road, Chileno Valley.  Recover and fuel up at the Laguna School before you spin those hard working legs up Wilson Hill. We will have SAG vehicles and water if you need a little extra help up the day’s most challenging climb. Be careful on the steep descent, then mostly coast back to the finish line and to the after-ride party.  You’ve earned it!   Your total elevation gain for this route will be 4,300.
-
-                    </p>
-                </div>
-            </div>
-
-            <div class="ride">
-<iframe src="https://ridewithgps.com/embeds?type=route&id=53150610&title=Metric%20Century&sampleGraph=true" style="width: 1px; min-width: 100%; height: 700px; border: none;" scrolling="no"></iframe>
-            </div>
-
-            <div class="ride">
-<iframe src="https://ridewithgps.com/embeds?type=route&id=53150512&title=Century&sampleGraph=true" style="width: 1px; min-width: 100%; height: 700px; border: none;" scrolling="no"></iframe>
-            </div>
-
-
-            <div class="ride">
-                <h4 class="ride__heading"><span class="ride__day_of_the_week">Century</span> (100 mi / 6624 ft)</h4>
-                <div class="ride__extras">
-                    <p>
-
-The Century is our most popular route choice, and for good reason. Whether it’s your first Century or your 50th, 100 miles in one day is always a memorable, iconic day. The Century follows the same path as the Metric, so it includes Tomales Bay views, farmland, cows, more cows, rolling Chileno Valley Road, and challenging Wilson Hill, but also has two add-ons. The first addition is early in the course; it is a trip through the Redwood trees and San Geronimo Valley, replete with its own rest stop and live music. The second extra section, which comes towards the end of the day, is a loop on the serene West Marin Roads including nicely paved Spring Hill Road and yet another fully stocked rest stop on the edges of historic Petaluma. Your total climbing for this route will be about 6624 feet, not the easiest Century, especially since the climbing is back-loaded, but far from the hardest. 
-                    </p>
-                </div>
-            </div>
-
-            <div class="ride">
-                <h4 class="ride__heading"><span class="ride__day_of_the_week">Mt. Tam</span>  (93 mi / 9068 ft)</h4>
-                <div class="ride__extras">
-                    <p>
-
-The Mt. Tam route trades miles for elevation. You will “only” ride 93 miles but you will climb, climb, and climb. The Double Metric and the Mt. Tam follow the same tough challenging route for the first 80 miles. You will ride through rolling farmland to the town of Fairfax. Then, continue UP the remote Bolinas-Fairfax Road, pass Alpine Dam, UP to the exposed, panoramic, Ridgecrest spine, followed by more UP to the summit of Mt. Tamalpais. Phew, you have completed more than half of the climbing! Next, it’s time for jaw dropping scenery on a descent down steep and twisty, possibly wet and slippery roads, all the way back to sea level. But that’s only mile 50. Head north, passing beautiful beaches and Pacific Ocean rocky outcroppings, on undulating Highway 1, just past Pt. Reyes Station. The Double Metric route keeps heading north at this point, but the Mt.Tam route will short cut back to the start. The final, comparatively short, climbs up Cheese Factory Hill and Novato Blvd might hurt your tired legs as you head to the finish line. Please be aware that this route is for experienced cyclists only.  It is technically challenging, has fewer rest stops, more traffic, and more climbing than the Century. The Mt. Tam course has a whopping 9,068 feet of climbing, in only 93 miles. 
-                    </p>
-                </div>
-            </div>
-            <div class="ride">
-<iframe src="https://ridewithgps.com/embeds?type=route&id=52232029&title=Mt.%20Tam&sampleGraph=true" style="width: 1px; min-width: 100%; height: 700px; border: none;" scrolling="no"></iframe>
-            </div>
-
-            <div class="ride">
-<iframe src="https://ridewithgps.com/embeds?type=route&id=53150623&title=Double%20Metric&sampleGraph=true" style="width: 1px; min-width: 100%; height: 700px; border: none;" scrolling="no"></iframe>
-            </div>
-
-            <div class="ride">
-                <h4 class="ride__heading"><span class="ride__day_of_the_week">Double Metric</span>(127 mi/204 km / 11,070 ft)</h4>
-                <div class="ride__extras">
-                    <p>
-If you are a strong, super fit, endurance bike rider who loves to climb, then you might have what it takes to ride the Double Metric Century, with 127 miles and just over 11,000 feet of elevation gain. It combines all of the Mt Tam course AND the Metric course into one big ride! You’ll see it all – farmland, redwoods, Mt. Tam (of course), ocean, lake, and Bay views, and small coastal towns. Pass through the protected lands of a water district, two state parks and a National Recreation Area. You’ll have extended climbs on isolated roads and views from atop Mt. Tamalpais that will draw your attention away from the task at hand (keep your eyes on the road though). The Double Metric Century is for experienced cyclists accustomed to huge climbs and steep, technical descents, on sometimes rough and slippery roads with some sections of busy traffic. You must be fast enough to complete this killer course before the time cut off at mile 80, or you will be diverted on to the Mt. Tam route. You should prefer to spend your time in the saddle all day, rather than hang out at the after-ride party, because you will miss the music and a lot of the party. Don’t worry, we will make sure to save you plenty of dinner and feed you royally at the rest stops. Please make sure that both you and your bike are up for the challenge. 
-                    </p>
-                </div>
-            </div>
-
-
-    </div>
-</section>
-
-<section id="safety-and-tips">
-    <div class="site-column">
-        <h2>Rules, Safety, and Tips</h2>
-        <div class="layout-2col">
-            <div>
-                <div id="ride-rules">
-                    <h3>Ride Rules</h3>
-                    <ul>
-<li>Wear a helmet at all times while riding.</li>
-<li>Do not wear earbuds in both ears while riding</li>
-<li>Be responsible for the safety and condition of your bicycle and cycling equipment</li>
-<li>Cyclists must obey all California vehicle code laws, including making full stops at stop signs and signals. Local authorities will be on course and may cite violators.</li>
-<li>Be courteous to local drivers and respectful of traffic.</li>
-<li>Use the rest stop services provided by Marin Cyclists. </li>
-<li>Ride single file except when passing or in protected shoulders</li>
-<li>Ride as close to the right side of the road as practicable</li>
-<li>Announce “on your left” when passing other riders.</li>
-<li>Be very careful when riding near pace lines.</li>
-<li>Move to the right to let faster riders pass.</li>
-<li>Pin your rider number to your jersey and wear your wristband</li>
-<li>Private SAG vehicles are not allowed and will result in your removal from the course.</li>  
-                    </ul>
-                </div>
-                <div id="ebike-policy">
-                    <h3>E-bike policy</h3>
-                    <ul>
-                        <li>Class 1 and class 3 e-bike are permitted on our rides.</li>
-                        <li>No class 2 throttle e-bikes are allowed at any time.</li>
-                        <li>Please follow all the same rules of the road as other riders in the group.</li>
-                        <li>Be respectful and courteous</li>
-                    </ul>
-                </div>
-            </div>
-            <div>
-                <div id="what-to-bring">
-                    <h3>What to Bring</h3>
-                    <ul>
-            <li>Driver's license or other form of identification</li>
-<li>Spare tube</li>
-<li>Patch kit</li>
-<li>Pump or CO2 cartridges</li>
-<li>Tire levers</li>
-<li>Tools</li>
-<li>Two full water bottles<li>
-<li>Cell phone</li>
-<li>Personal clothing<li>
-<li>Any medications you may need including inhalers, epi pens etc.</li>
-                    </ul>
-                </div>
-            </div>
-
+      <div class="ride">
+        <h4 class="ride__heading">
+          <span class="ride__day_of_the_week">Metric Century</span> (63.5 mi 102
+          km / 4300 ft)
+        </h4>
+        <div class="ride__extras">
+          <p>
+            The Metric Century is a 63-mile ( 102 km) course that travels
+            through lovely West Marin in a clockwise direction. Climb up out of
+            Stafford Lake Park, passing by cows to reach the ever pretty Nicasio
+            Valley Reservoir. Stop for a break before Pt Reyes Station, then
+            head north on Highway 1 marveling at the scenic water views of
+            Tomales Bay and on to the country town park of Tomales, for a rest
+            and some live music. Flow through the pastoral farm lands on the
+            favorite local bikers road, Chileno Valley. Recover and fuel up at
+            the Laguna School before you spin those hard working legs up Wilson
+            Hill. We will have SAG vehicles and water if you need a little extra
+            help up the day’s most challenging climb. Be careful on the steep
+            descent, then mostly coast back to the finish line and to the
+            after-ride party. You’ve earned it! Your total elevation gain for
+            this route will be 4,300.
+          </p>
         </div>
-    </div>
-</section>
+      </div>
 
-<section id="testimonials">
-    <div class="site-column">
-        <h2>Testimonials</h2>
-      <blockquote>
-                <p>“If there is a Valhalla for cyclists, this is it. Weather, team and bike all came together to become paradise.”  (Aaron, San Luis Obispo)
-                </p>
-            </blockquote>
-    <blockquote>
-    <p>
-"My favorite century. The first part was super smooth roads and the first rest stop was unexpectedly awesome. Bacon!! I didn't use them but great SAG support. Saw vehicles consistently." Terry, San Francisco
-      </p>
-    </blockquote>
-    <blockquote>
-<p>
-"Amazing all around. Huge thanks to the entire team! Rest stops were well placed, well stocked, staff was friendly, parking was streamlined, course was beautiful.” (Bradford, San Francisco)
-      </p>
-    </blockquote>
-    </div>
-</section>
+      <div class="ride">
+        <iframe
+          src="https://ridewithgps.com/embeds?type=route&id=53150610&title=Metric%20Century&sampleGraph=true"
+          style="width: 1px; min-width: 100%; height: 700px; border: none"
+          scrolling="no"
+        ></iframe>
+      </div>
 
-<section id="ride-details">
+      <div class="ride">
+        <iframe
+          src="https://ridewithgps.com/embeds?type=route&id=53150512&title=Century&sampleGraph=true"
+          style="width: 1px; min-width: 100%; height: 700px; border: none"
+          scrolling="no"
+        ></iframe>
+      </div>
 
-    <div class="site-column">
-        <h2>Ride Details</h2>
-    <h3>WHEN - WHERE - HOW</h3>
-<h4>MASS START TIMES</h4>
-<ul>
-<li>    Double Metric: 6:15 am</li>
-<li>Mt. Tam 6:30 am</li>
-<li>Century 7  am (<15 mph) and 7:30 am(>15 mph average speed)</li>
-<li>Metric:  8 am (<14 mph and 8:30 am (>14 mph average speed</li>
-<li>Geronimo: 9 am</li>
-<p><strong>Mass starts are fun but they are not for everyone.  If you prefer NOT to join in on the mass starts, please start as follows:</strong></p>
-<li>Double Metric: Must start at 6:15 am</li>
-<li>Mt. Tam: start between 6:20 - 6:45 am</li>
-<li>Century: start between 6:45 am and 7:45 am</li>
-<li>Metric:  start between 7:45 am and 8:45 am</li>
-<li>Geronimo: start between 8:45 am and 9:15 am</li>
-</ul>
-<p>
-<strong>IF YOU HAVE YOUR BIB number AND WRISTBAND THERE IS NO NEED TO STOP AT REGISTRATION. JUST line up at the Start Line 
-</strong>
+      <div class="ride">
+        <h4 class="ride__heading">
+          <span class="ride__day_of_the_week">Century</span> (100 mi / 6624 ft)
+        </h4>
+        <div class="ride__extras">
+          <p>
+            The Century is our most popular route choice, and for good reason.
+            Whether it’s your first Century or your 50th, 100 miles in one day
+            is always a memorable, iconic day. The Century follows the same path
+            as the Metric, so it includes Tomales Bay views, farmland, cows,
+            more cows, rolling Chileno Valley Road, and challenging Wilson Hill,
+            but also has two add-ons. The first addition is early in the course;
+            it is a trip through the Redwood trees and San Geronimo Valley,
+            replete with its own rest stop and live music. The second extra
+            section, which comes towards the end of the day, is a loop on the
+            serene West Marin Roads including nicely paved Spring Hill Road and
+            yet another fully stocked rest stop on the edges of historic
+            Petaluma. Your total climbing for this route will be about 6624
+            feet, not the easiest Century, especially since the climbing is
+            back-loaded, but far from the hardest.
+          </p>
+        </div>
+      </div>
 
-<h3>CUT OFF TIMES</h3>
-    <p>
-    Cut off times will be strictly enforced in order to ensure SAG support and your return to the finish before closing time.<br>
-<ul>
-<li>Double Metric: You must depart the Pt Reyes Rest Stop before 3:00 pm. or you will be diverted to the Mt Tam Course</li>
-<li>Century: The Spring Hill loop (mile 69- 90) will close at 3 pm and you will be diverted to the finish.</li>
-        </ul>
-</p>
-<h3>Directions and Parking</h3>
+      <div class="ride">
+        <h4 class="ride__heading">
+          <span class="ride__day_of_the_week">Mt. Tam</span> (93 mi / 9068 ft)
+        </h4>
+        <div class="ride__extras">
+          <p>
+            The Mt. Tam route trades miles for elevation. You will “only” ride
+            93 miles but you will climb, climb, and climb. The Double Metric and
+            the Mt. Tam follow the same tough challenging route for the first 80
+            miles. You will ride through rolling farmland to the town of
+            Fairfax. Then, continue UP the remote Bolinas-Fairfax Road, pass
+            Alpine Dam, UP to the exposed, panoramic, Ridgecrest Road ridgeline,
+            followed by more UP to the summit of Mt. Tamalpais. Phew, you have
+            completed more than half of the climbing! Next, it’s time for jaw
+            dropping scenery on a descent down steep and twisty, possibly wet
+            and slippery roads, all the way back to sea level. But that’s only
+            mile 50. Head north, passing beautiful beaches and Pacific Ocean
+            rocky outcroppings on historic Highway 1. The Double Metric route
+            keeps heading north at this point, but the Mt.Tam route will short
+            cut back to the start. The final, comparatively short, climbs up
+            Cheese Factory Hill and Novato Blvd might hurt your tired legs as
+            you head to the finish line. Please be aware that this route is for
+            experienced cyclists only. It is technically challenging, has fewer
+            rest stops, and more climbing than the Century. The Mt. Tam course
+            has a whopping 9,068 feet of climbing, in only 93 miles.
+          </p>
+        </div>
+      </div>
+      <div class="ride">
+        <iframe
+          src="https://ridewithgps.com/embeds?type=route&id=52232029&title=Mt.%20Tam&sampleGraph=true"
+          style="width: 1px; min-width: 100%; height: 700px; border: none"
+          scrolling="no"
+        ></iframe>
+      </div>
 
-<h4>Address</h4>
-<p>
-Stafford Lake Park
-3549 Novato Blvd.
-Novato, CA 94947
-</p>
+      <div class="ride">
+        <iframe
+          src="https://ridewithgps.com/embeds?type=route&id=53150623&title=Double%20Metric&sampleGraph=true"
+          style="width: 1px; min-width: 100%; height: 700px; border: none"
+          scrolling="no"
+        ></iframe>
+      </div>
 
-<h3>Parking and Directions</h3>
-<p>Free parking is available on site.
-From Highway 101 take exit 463 San Marin Dr. West 2.9 miles to Novato Blvd. Turn right and drive 2.6 miles to the park. 
-Follow the directions of our parking attendants.
-Parking is limited. Please carpool if possible.
-Get Google Maps Directions <a href="">Here</a>
-</p>
-    </p>
-  </div>
-  </section>
-
-<section id="merch">
-    <div class="site-column">
-        <h2>Merchandise</h2>
-    <p>
-Order your custom kit made by Giordana Cycling, a premier, family owned Italian company,  providing superior apparel.  Choose a full kit or individual pieces from jersey, shorts, bibs, and socks with unique 2026 Marin Century designs at bulk discounted prices.  
-</p>
-    <img width=600 src="img/marin_century_jersey.png">
-
-<p>
-Take home a souvenir Marin Century T-shirt, in soft cotton available in a large range of sizes.
-</p>
-    <img width=300 src="img/century_shirt.png">
-    </div>
-</section>
-<section id="accomodations">
-    <div class="site-column">
-        <h2>Accomodations</h2>
-<p>
-Stay nearby! If you are from out of town, or from the other side of the Bay, consider booking a room or campsite so you don’t have to wake up so early on August 1. 
-</p>
- <p>   
-For your convenience, we are holding blocks of rooms at three local, 3 star hotels, until they sell out. There are other hotels in Marin and Sonoma County for your independent consideration.
-</p>
-<ol>
-<li><a href="https://www.wyndhamhotels.com/days-inn/novato-california/days-inn-novato-san-francisco/rooms-rates?brand_id=DI&checkInDate=7/31/2026&checkOutDate=8/1/2026&useWRPoints=false&children=0&groupCode=GS073126MAR&adults=1&rooms=1&loc=ChIJjZ6kWd-7hYARSbhzxmcUtwU&sessionId=1763747451">Days Inn by Wyndham, Novato/San Francisco</a>, located 14 minutes/6.6 miles away by car. Light breakfast item included. The more economical option. Call 415-897-7111 and ask for the “Marin Century” Group or book online.
-
-<li><a href="https://www.hilton.com/en/hotels/sforfes-embassy-suites-san-rafael-marin-county/">Embassy Suites by Hilton, San Rafael</a>, located 22 minutes/14 miles away by car. All suites comfort. Breakfast buffet starts at 7:30 am. Call 1-800-EMBASSY and ask for “Marin Century” or book online. Discounted rate
-<li><a href="https://www.bestwestern.com/en_US/book/hotels-in-novato/best-western-plus-novato-oaks-inn/propertyCode.05548.html">Best Western Plus Novato Oaks Inn</a>, located 19 minutes/11 miles away by car. Breakfast buffet starts at 6:00 am. Two night minimum. Discounted rate. Call Hotel Directly:
-415.883.4400 or 800.625.7466 and ask for the “Marin Century” Group Block or book online. 
-</ol>
-<p>Camping - There is NO camping allowed at Stafford Lake Park. Below are the closest campgrounds<p>
-<ol>
-<li><a href="https://www.parks.ca.gov/?page_id=28538">Samuel P Taylor State Park</a>, allows tents, small RV’s and small trailers. Coin Hot showers on site. No hookups. Cabins also available. Located 23 minutes/15 miles away by car. 
-Olema Campground, allows tents and RV’s, many with hook ups. Full bathrooms with hot showers on site. Located 25 minutes/16 miles away by car.</li>
-<li><a href="https://olemacampground.net/">Petaluma KOA</a> has deluxe sites for large RV’s and also tents and cabins with many amenities. Located 26 minutes/19 miles away by car.</li>
-<li><a href="https://novatorvpark.com/">Novato RV Park</a>, for RV’s only with full hookups. Located 12 minutes/5.9 miles away by vehicle.</li>
-    </div>
-</section>
-
-<section id="faq"> 
-    <div class="site-column">
-
-    <h2>FAQ</h2>
-
-            <details>
-                <summary>FAQ</summary>
-                <h4>What time does the ride start?</h4>
-                <p>
-                    <h4>SEVEN MASS STARTS</h4>
-<ul>
-<li>Double Metric: 6:15 am</li>
-<li>Mt. Tam 6:30 am</li>
-<li>Century 7  am (slower riders)  and 7:30 am (faster riders)</li>
-<li>Metric:  8 am (slower riders) and 8:30 am (faster riders)</li>
-<li>Geronimo: 9 am</li>
-<p><strong>Mass starts are fun but they are not for everyone.  If you prefer NOT to join in on the mass starts, please start as follows:</strong></p>
-<li>Double Metric: Must start at 6:15 am</li>
-<li>Mt. Tam: start between 6:20 - 6:45 am</li>
-<li>Century: start between 6:45 am and 7:45 am</li>
-<li>Metric:  start between 7:45 am and 8:45 am</li>
-<li>Geronimo: start between 8:45 am and 9:15 am</li>
-</ul>
-        
-                <h4>How is the course marked?</h4>
-                
-<p>Routes will be marked with (road) route arrows and signs. However, the most reliable directions can be found on the reverse side of the map or downloadable on RidewithGPS cues.</p>
-
-<ul>
-<li>Double Metric: YELLOW A-frame signs and arrows</li>
-<li>Mt. Tam: BLUE A-frame  signs and arrows</li>
-<li>Century: GREEN A-frame  signs and arrows</li> 
-<li>Metric: ORANGE A-frame  signs and arrows</li>
-<li>Geronimo: PURPLE A-frame signs and arrows</li>
-          </ul>
-
-                <h4>Do I need to check in at the start?</h4>
-                <p>
-Riders must check in to pick up their packets(valid ID required) unless you received your bib & wristband in the mail (choose concierge options during registration). 
-                </p>
-                <h4>How difficult are the courses?</h4>
-                <p>
-We offer a ride to challenge everyone. You must be fit and trained to complete any of the courses.Please review the maps and elevations profiles on Ride with GPS
-Note: Routes are subject to change.
-                </p>
-
-                <h4>How is the condition of the roads?</h4>
-                <p>
-          Generally good, but you should always be alert. Road conditions on Mt. Tam Fairfax/Bolinas Rd can be variable. Potholes, fissures, and loose gravel are common. One way lane controls may be in effect. The descents in all areas can be wet from dew and some corners are off camber. Ride safe and stay in control.
-                </p>
-
-                <h4>Is there a clothing drop?</h4>
-                <p>
-Yes!  Bag drops will be available at West Marin and Tomales Rest Stops.  After the ride, pick up your clothing in the ride expo area near the bicycle parking.  
-                </p>
-
-                <h4>Where can I stay nearby?</h4>
-          Hotels closest to Stafford Lake Park include:<br>
-          <ul>
-
-<li><a href="https://www.wyndhamhotels.com/days-inn/novato-california/days-inn-novato-san-francisco/overview">Days Inn by Wyndham Novato</a></li>
-<li><a href="https://www.redlion.com/americas-best-value-inn/ca/novato/americas-best-value-inn-novato-marin-sonoma">Americas Best Value Inn  in Novato</a></li> 
-<li><a href="https://www.innmarin.com/">Inn Marin and Suites, Ascend Hotel Collection in Novato</a></li>
-<li><a href="https://www.hilton.com/en/hotels/sforfes-embassy-suites-san-rafael-marin-county/">Embassy Suites by Hilton/San Rafael</a></li>
-              </ul>
-                </p>
-                <h4>Is there camping at Stafford Lake?</h4>
-                <p>
-There is no camping allowed at Stafford Lake Park. The nearest RV park is <a href="https://www.novatorvpark.com/">Novato RV Park</a> The closest campgrounds are the <a href="https://www.olemacampground.net/">Olema Campground</a>, <a href="https://www.parks.ca.gov/?page_id=469">Samuel P Taylor State Park<>, and <a href="https://koa.com/campgrounds/san-francisco/">Petaluma KOA</a>.  A little further away is  the <a href="https://www.hipcamp.com/en-US/california/china-camp/back-ranch-meadows-campground">Back Ranch Campground</a> in China Camp.
-                </p>
-                <h4>Where can I rent a bike?</h4>
-                <p>
-          It may be difficult to find rental or demo road bikes in the area. Local bike shops that may be able to help, including <a href="https://marincyclists.com/handlers/celinks.ashx?id=50847">Mikes Bikes San Rafael</a> and <a href="https://marincyclists.com/handlers/celinks.ashx?id=50849">Sports Basement Novato</a>.
-                </p>
-        
-                <h4>Can I bring my dog?</h4>
-                <p>
-          Unfortunately, Stafford Lake Park does not allow dogs or other domestic animals, except for service animals per the Americans With Disabilities Act.
-                </p>
-                <h4>Can I pick up my packet on Friday?</h4>
-                <p>
-          We do not provide Friday packet pick up, if you would like to receive your packet in the mail please select “Concierge Service “ when registering 
-                </p>
-                <h4>Why don’t you give refunds?</h4>
-                <p>
-          When you register, you will have the option of buying purchase protection in case of an emergency that keeps you from riding. Work directly with Purchase Protection, LLC , to obtain your refund.  If you do not purchase this service,, then you will not be entitled to a refund. However, you can transfer your registration to another rider.  
-
-                </p>
-                <h4>Can I defer to next year? Why not?</h4>
-                <p>
-          We do not allow deferrals. If you register but are unable to ride the event, you can transfer your registration. Or,  if you elected purchase protection, then you can submit a refund claim to <a href="https://www.purchaseprotection.com/">Purchase Protection LLC  for covered circumstances.</a>
-                </p>
-                <h4>Will you have vegetarian and vegan food?</h4>
-                <p>
-          We will have some vegetarian choices at the rest stops and at the after party. There will also be limited plant based options. 
-                </p>
-                <h4>Will you have electrolytes and energy gels?</h4>
-                <p>
-Yes, each rest stop will have electrolyte powder from our in-kind sponsor, Osmo..  Each rest stop will also have limited energy gels, electrolytes,  and bars.  We concentrate on providing food you wouldn’t normally carry on your usual rides.  If you like a particular drink mix or fuel, please bring your own.
-                </p>
-                <h4>My Packet did not come in the mail. Where do I get it?</h4>
-                <p>
-          Please come to the Registration Booth at Stafford Lake on August 1. We are open at 6:00 am
-                </p>
-
-                <h4>Where's my T-shirt that I ordered?</h4>
-                <p>
-T-Shirts are available for pick up from the T-shirt  booth next to the bike corral  when you return from your ride.
-                </p>
-                <h4>Where's my Giordana clothing that I ordered?</h4>
-                <p>
-          Jerseys, shorts/bibs, and socks will be mailed to you. If you order before the cut off date, May 22, 2026, then you should receive your clothing in time to wear it during the Marin Century.  If you ordered later than that, you will receive it in the mail in late October.
-                </p>
-            </details>
-</div>
-  </section>
-<section id="volunteering"> 
-    <div class="site-column">
-    <h2>Volunteering</h2>
-    <h3>Sign-ups should open in late June</h3>
-    <p>
-To ensure the smooth execution of the Marin Century, we are seeking dedicated volunteers to help with a range of tasks, including registration, site setup, food service, SAG drivers, rest stop helpers, course marshals, and general event assistance. Volunteers play a vital role in creating a safe and enjoyable experience for participants, offering support, guidance, and encouragement along the routes.
-No prior experience is necessary to volunteer for the Marin Century. All that is required is enthusiasm, a positive attitude, and a willingness to contribute to the success of this extraordinary event. Volunteers will receive training and support, ensuring they are well-prepared to fulfill their roles.  Lunch is included for shifts of 4 or more hours. In appreciation, volunteers receive T-shirts and are invited to ride the supported workers’ ride on Saturday, August 8, 2026.
-
-    </p>
-    </div>
-</section>
-
-<section id="sponsors">
-    <div class="site-column">
-    <h2>Sponsorship</h2>
-    <p>
-Get ready to pedal into unparalleled exposure and community engagement by sponsoring the Marin Century. Chosen by Outdoor Magazine as "One of the Top 25 Rides in the Country", the Marin Century offers an exceptional opportunity for your company to connect with thousands of passionate cyclists and outdoor enthusiasts.
-      </p>
-<h3>Why Sponsor the Marin Century?</h3>
-<ul>
-<li><strong>Visibility:</strong> Showcase your brand to a diverse audience of cyclists, families, and fitness enthusiasts from across the region. With extensive marketing efforts and media coverage, your logo will be prominently displayed, ensuring widespread recognition.</li>
-<li><strong>Community Engagement:</strong> Demonstrate your commitment to health, wellness, and community involvement by supporting an event that promotes active lifestyles and outdoor recreation. Engage directly with participants and spectators to foster lasting connections.</li>
-<li><strong>Customized Opportunities:</strong> Tailor your sponsorship package to align with your marketing objectives and budget. From logo placement on event materials to branded merchandise and experiential activations, we offer flexible options to suit your needs.</li>
-<li><strong>Positive Impact:</strong> Contribute to the success of a beloved local event while making a meaningful difference in the community. Your sponsorship helps support important initiatives, including cycling advocacy, youth programs, and environmental conservation efforts.</li>
-
-<p>Don't miss this chance to elevate your brand and make a lasting impression on thousands of participants and spectators. Join us in celebrating the spirit of cycling and outdoor adventure at the Marin Century!</p>
-
-<p>For more information on sponsorship opportunities, please contact <a href="mailto:jeff@marincyclists.com">Jeff Sanchez</a>. Together, let's pedal towards success and unforgettable experiences!</p>
-
-<h3>Proceeds are Donated to Local and Regional Non Profit Organizations</h3>
-<p>
-<h4>Bicycle Coalitions:</h4>
-Marin County Bicycle Coalition
-      <br>
-California Bicycle Coalition (CalBike)
-
-      <br>
-Sonoma County Bicycle Coalition
-
-      <br>
-San Francisco Bicycle Coalition
-      <br>
-Silicon Valley Bicycle Coalition
-      <br>
-Bike East Bay
-      <br>
-
-
-<h4>Bicycling Programs for the underserved or disabled</h4>
-Cycles of Change (Oakland youth bike access)
-      <br>
-Rich City Rides (Richmond bike education, repair and community)
-      <br>
-Cory's Ride (provides bikes and training to Marin students)
-      <br>
-Kelly Brush Foundation (Bicycling and other activities for people with spinal cord injuries)
-      <br>
-Waterside Workshops (Berkeley job training on bikes and boats)
-      <br>
-Trips for Kids (Bike access and programming for marginalized youth)
-      <br>
-BORP  (Adaptive athletics for people with mobility and vision disabilities)
-      <br>
-
-
-<h4>Local Community Organizations</h4>
-Tomales Village Community Services District (maintains the park in Tomales)
-      <br>
-West Marin Community Services (Safety net support)
-      <br>
-North Marin Community Services (Human services non profit)
-      <br>
-Opening the World (Underprivileged, transitional age youth who have experienced trauma)
-      <br>
-Conservation Corps of the North Bay
-      <br>
-Buckelew Programs (Mental health, supported housing and substance abuse treatment)
-      <br>
-San Francisco AIDS Foundation
-      <br>
-Marin County Parks
-      <br>
-Extrafood (Food recovery program)
-      <br>
-
-
-<h4>Local Schools</h4>
-Bolinas-Stinson Union School
-      <br>
-San Rafael High School Senior Class and Boosters
-      <br>
-Laguna Joint School District
-      <br>
-Lagunitas School District
-      <br>
-Nicasio School Foundation
-      <br>
-Shoreline Unified School District
-      <br>
-Wilson School, Petaluma
-
-
-<h4>Youth Bicycling Teams</h4>
-Skyline High School MTB team (Oakland)
-      <br>
-Novato MTB Middle School team
-      <br>
-San Rafael MTB team
-      <br>
-Terra Linda MTB Team
-      <br>
-Team Swift for Owen Wentzel (junior sponsored road biking racer)
-      <br>
-
-
-<h4>Partner Non Profits</h4>
-Marin Amateur Radio Society
-      <br>
-National Multiple Sclerosis Society
-      <br>
-Santa Rosa Cycling Club
-  </p>
-    </div>
-</section>
-
-<section id="and-more">
-    <div class="site-column">
-    <h2> And More!</h2>
-    <p> Did you think that was everything? Take a look at our exhaustive list!</p>
-    <h3>The Basics</h3>
-<ul>
-  <li>Your choice of five well marked courses (37 - 127 miles)</li>
-  <li>Optional mass starts for each route</li>
-  <li>Optional Purchase Protection</li>
-  <li>Multiple well spaced rest stops</li>
-</ul>
-
-<h3>Support</h3>
-<ul>
-  <li>Marin Amateur Radio Society (MARS), and SAG vehicles on all courses</li>
-  <li>Certified mechanics at the Start and at most rest stops</li>
-  <li>California Highway Patrol support at busy intersections</li>
-  <li>First Aid providers at rest stops</li>
-  <li>Paper maps, cue sheets and Ride with GPS electronic directions</li>
-  <li>Turns are marked with direction signs and route arrows</li>
-  <li>Clothing drop bags</li>
-  <li>Bike parking corral at the finish</li>
-</ul>
-
-<h3>Extras</h3>
-<ul>
-  <li>Specialized, high quality commemorative water bottle</li>
-  <li>Top tube sticker showing elevation and rest stop distances</li>
-  <li>Optional 15 minute sports massage</li>
-  <li>Free professional photos</li>
-  <li>Optional advanced delivery of your rider packet via mail service</li>
-</ul>
-
-<h3>So Much Food</h3>
-<ul>
-  <li>Rest stops are stocked with ice cold beverages, fresh local fruit, sweet and salty snacks, energy bars and electrolyte drinks</li>
-  <li>Locally made goodies – focaccia, pie, doughnuts, cinnamon rolls, and cruffins at the rest stops</li>
-  <li>Fresh pre-ride hot morning coffee bar</li>
-  <li>Post-ride unlimited feast with barbecue, burritos, and artisan pizza</li>
-  <li>Delicious small batch gelato or dairy-free sorbet from Fiorello's</li>
-  <li>Home-made smoothies at one of the last rest stops</li>
-  <li>Waffle sliders and coffee at one of the first rest stops</li>
-  <li>Hot dogs and vegetarian sausages at the middle rest stop</li>
-</ul>
-
-<h3>It’s a Party</h3>
-<ul>
-  <li>Your first cold craft beer from Pond Farm Brewing is on us!</li>
-  <li>Live musicians at select rest stops and on course</li>
-  <li>Live music at the finish</li>
-  <li>Bike expo with over a dozen different vendors/organizations</li>
-  <li>Photo backdrop at the finish area</li>
-</ul>
-  </div>
-</section>
-<footer>
-    <div class="page-column">
-
-    <div class="site-column">
-        <div id="footer-links">
-        <a href="mailto:centuryregistration@marincyclists.com">Contact Us</a>
+      <div class="ride">
+        <h4 class="ride__heading">
+          <span class="ride__day_of_the_week">Double Metric</span>(127 mi/204 km
+          / 11,070 ft)
+        </h4>
+        <div class="ride__extras">
+          <p>
+            If you are a strong, super fit, endurance bike rider who loves to
+            climb, then you might have what it takes to ride the Double Metric
+            Century, with 127 miles and just over 11,000 feet of elevation gain.
+            It combines all of the Mt Tam course AND the Metric course into one
+            big ride! You’ll see it all – farmland, redwoods, Mt. Tam (of
+            course), ocean, lake, and Bay views, and small coastal towns. Pass
+            through the protected lands of a water district, two state parks and
+            a National Recreation Area. You’ll have extended climbs on isolated
+            roads and views from atop Mt. Tamalpais that will draw your
+            attention away from the task at hand (keep your eyes on the road
+            though). The Double Metric Century is for experienced cyclists
+            accustomed to huge climbs and steep, technical descents, on
+            sometimes rough and slippery roads with some sections of busy
+            traffic. You must be fast enough to complete this killer course
+            before the time cut off at mile 80, or you will be diverted on to
+            the Mt. Tam route. You should prefer to spend your time in the
+            saddle all day, rather than hang out at the after-ride party,
+            because you will miss the music and a lot of the party. Don’t worry,
+            we will make sure to save you plenty of dinner and feed you royally
+            at the rest stops. Please make sure that both you and your bike are
+            up for the challenge.
+          </p>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="safety-and-tips">
+  <div class="site-column">
+    <h2>Rules, Safety, and Tips</h2>
+    <div class="layout-2col">
+      <div>
+        <div id="ride-rules">
+          <h3>Ride Rules</h3>
+          <ul>
+            <li>Wear a helmet at all times while riding.</li>
+            <li>Do not wear earbuds in both ears while riding</li>
+            <li>
+              Be responsible for the safety and condition of your bicycle and
+              cycling equipment
+            </li>
+            <li>
+              Cyclists must obey all California vehicle code laws, including
+              making full stops at stop signs and signals. Local authorities
+              will be on course and may cite violators.
+            </li>
+            <li>Be courteous to local drivers and respectful of traffic.</li>
+            <li>Use the rest stop services provided by Marin Cyclists.</li>
+            <li>
+              Ride single file except when passing or in protected shoulders
+            </li>
+            <li>Ride as close to the right side of the road as practicable</li>
+            <li>Announce “on your left” when passing other riders.</li>
+            <li>Be very careful when riding near pace lines.</li>
+            <li>Move to the right to let faster riders pass.</li>
+            <li>
+              Pin your rider number to your jersey and wear your wristband
+            </li>
+            <li>
+              Private SAG vehicles are not allowed and will result in your
+              removal from the course.
+            </li>
+          </ul>
+        </div>
+        <div id="ebike-policy">
+          <h3>E-bike policy</h3>
+          <ul>
+            <li>Class 1 and class 3 e-bike are permitted on our rides.</li>
+            <li>No class 2 throttle e-bikes are allowed at any time.</li>
+            <li>
+              Please follow all the same rules of the road as other riders in
+              the group.
+            </li>
+            <li>Be respectful and courteous</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div id="what-to-bring">
+          <h3>What to Bring</h3>
+          <ul>
+            <li>Driver's license or other form of identification</li>
+            <li>Spare tube</li>
+            <li>Patch kit</li>
+            <li>Pump or CO2 cartridges</li>
+            <li>Tire levers</li>
+            <li>Tools</li>
+            <li>Two full water bottles</li>
+            <li></li>
+            <li>Cell phone</li>
+            <li>Personal clothing</li>
+            <li></li>
+            <li>
+              Any medications you may need including inhalers, epi pens etc.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="site-column">
+    <h2>Testimonials</h2>
+    <blockquote>
+      <p>
+        “If there is a Valhalla for cyclists, this is it. Weather, team and bike
+        all came together to become paradise.” (Aaron, San Luis Obispo)
+      </p>
+    </blockquote>
+    <blockquote>
+      <p>
+        "My favorite century. The first part was super smooth roads and the
+        first rest stop was unexpectedly awesome. Bacon!! I didn't use them but
+        great SAG support. Saw vehicles consistently." Terry, San Francisco
+      </p>
+    </blockquote>
+    <blockquote>
+      <p>
+        "Amazing all around. Huge thanks to the entire team! Rest stops were
+        well placed, well stocked, staff was friendly, parking was streamlined,
+        course was beautiful.” (Bradford, San Francisco)
+      </p>
+    </blockquote>
+  </div>
+</section>
+
+<section id="ride-details">
+  <div class="site-column">
+    <h2>Ride Details</h2>
+    <h3>WHEN - WHERE - HOW</h3>
+    <h4>MASS START TIMES</h4>
+    <ul>
+      <li>Double Metric: 6:15 am</li>
+      <li>Mt. Tam 6:30 am</li>
+      <li>Century 7 am (<15 mph) and 7:30 am(>15 mph average speed)</li>
+      <li>Metric: 8 am (<14 mph and 8:30 am (>14 mph average speed</li>
+      <li>Geronimo: 9 am</li>
+    </ul>
+    <p>
+      <strong
+        >Mass starts are fun but they are not for everyone. If you prefer NOT to
+        join in on the mass starts, please start as follows:</strong
+      >
+    </p>
+    <ul>
+      <li>Double Metric: Must start at 6:15 am</li>
+      <li>Mt. Tam: start between 6:20 - 6:45 am</li>
+      <li>Century: start between 6:45 am and 7:45 am</li>
+      <li>Metric: start between 7:45 am and 8:45 am</li>
+      <li>Geronimo: start between 8:45 am and 9:15 am</li>
+    </ul>
+    <p>
+      <strong
+        >IF YOU HAVE YOUR BIB number AND WRISTBAND THERE IS NO NEED TO STOP AT
+        REGISTRATION. JUST line up at the Start Line
+      </strong>
+    </p>
+    <h3>CUT OFF TIMES</h3>
+    <p>
+      Cut off times will be strictly enforced in order to ensure SAG support and
+      your return to the finish before closing time.<br />
+    </p>
+    <ul>
+      <li>
+        Double Metric: You must depart the Pt Reyes Rest Stop before 3:00 pm. or
+        you will be diverted to the Mt Tam Course
+      </li>
+      <li>
+        Century: The Spring Hill loop (mile 69- 90) will close at 3 pm and you
+        will be diverted to the finish.
+      </li>
+    </ul>
+    <h3>Directions and Parking</h3>
+
+    <h4>Address</h4>
+    <p>Stafford Lake Park 3549 Novato Blvd. Novato, CA 94947</p>
+
+    <h3>Parking and Directions</h3>
+    <p>
+      Free parking is available on site. From Highway 101 take exit 463 San
+      Marin Dr. West 2.9 miles to Novato Blvd. Turn right and drive 2.6 miles to
+      the park. Follow the directions of our parking attendants. Parking is
+      limited. Please carpool if possible. Get Google Maps Directions
+      <a href="">Here</a>
+    </p>
+  </div>
+</section>
+
+<section id="merch">
+  <div class="site-column">
+    <h2>Merchandise</h2>
+    <p>
+      Order your custom kit made by Giordana Cycling, a premier, family owned
+      Italian company, providing superior apparel. Choose a full kit or
+      individual pieces from jersey, shorts, bibs, and socks with unique 2026
+      Marin Century designs at bulk discounted prices.
+    </p>
+    <img width="600" src="img/marin_century_jersey.png" />
+
+    <p>
+      Take home a souvenir Marin Century T-shirt, in soft cotton available in a
+      large range of sizes.
+    </p>
+    <img width="300" src="img/century_shirt.png" />
+  </div>
+</section>
+<section id="accomodations">
+  <div class="site-column">
+    <h2>Accomodations</h2>
+    <p>
+      Stay nearby! If you are from out of town, or from the other side of the
+      Bay, consider booking a room or campsite so you don’t have to wake up so
+      early on August 1.
+    </p>
+    <p>
+      For your convenience, we are holding blocks of rooms at three local, 3
+      star hotels, until they sell out. There are other hotels in Marin and
+      Sonoma County for your independent consideration.
+    </p>
+    <ol>
+      <li>
+        <a
+          href="https://www.wyndhamhotels.com/days-inn/novato-california/days-inn-novato-san-francisco/rooms-rates?brand_id=DI&checkInDate=7/31/2026&checkOutDate=8/1/2026&useWRPoints=false&children=0&groupCode=GS073126MAR&adults=1&rooms=1&loc=ChIJjZ6kWd-7hYARSbhzxmcUtwU&sessionId=1763747451"
+          >Days Inn by Wyndham, Novato/San Francisco</a
+        >, located 14 minutes/6.6 miles away by car. Light breakfast item
+        included. The more economical option. Call 415-897-7111 and ask for the
+        “Marin Century” Group or book online.
+      </li>
+
+      <li>
+        <a
+          href="https://www.hilton.com/en/hotels/sforfes-embassy-suites-san-rafael-marin-county/"
+          >Embassy Suites by Hilton, San Rafael</a
+        >, located 22 minutes/14 miles away by car. All suites comfort.
+        Breakfast buffet starts at 7:30 am. Call 1-800-EMBASSY and ask for
+        “Marin Century” or book online. Discounted rate
+      </li>
+      <li>
+        <a
+          href="https://www.bestwestern.com/en_US/book/hotels-in-novato/best-western-plus-novato-oaks-inn/propertyCode.05548.html"
+          >Best Western Plus Novato Oaks Inn</a
+        >, located 19 minutes/11 miles away by car. Breakfast buffet starts at
+        6:00 am. Two night minimum. Discounted rate. Call Hotel Directly:
+        415.883.4400 or 800.625.7466 and ask for the “Marin Century” Group Block
+        or book online.
+      </li>
+    </ol>
+
+    <p>
+      Camping - There is NO camping allowed at Stafford Lake Park. Below are the
+      closest campgrounds
+    </p>
+    <ol>
+      <li>
+        <a href="https://www.parks.ca.gov/?page_id=28538"
+          >Samuel P Taylor State Park</a
+        >, allows tents, small RV’s and small trailers. Coin Hot showers on
+        site. No hookups. Cabins also available. Located 23 minutes/15 miles
+        away by car.
+      </li>
+      <li>
+        Olema Campground, allows tents and RV’s, many with hook ups. Full
+        bathrooms with hot showers on site. Located 25 minutes/16 miles away by
+        car.
+      </li>
+      <li>
+        <a href="https://olemacampground.net/">Petaluma KOA</a> has deluxe sites
+        for large RV’s and also tents and cabins with many amenities. Located 26
+        minutes/19 miles away by car.
+      </li>
+      <li>
+        <a href="https://novatorvpark.com/">Novato RV Park</a>, for RV’s only
+        with full hookups. Located 12 minutes/5.9 miles away by vehicle.
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="site-column">
+    <h2>FAQ</h2>
+
+    <details>
+      <summary>FAQ</summary>
+      <h4>What time does the ride start?</h4>
+
+      <h4>SEVEN MASS STARTS</h4>
+      <ul>
+        <li>Double Metric: 6:15 am</li>
+        <li>Mt. Tam 6:30 am</li>
+        <li>Century 7 am (slower riders) and 7:30 am (faster riders)</li>
+        <li>Metric: 8 am (slower riders) and 8:30 am (faster riders)</li>
+        <li>Geronimo: 9 am</li>
+      </ul>
+      <p>
+        <strong
+          >Mass starts are fun but they are not for everyone. If you prefer NOT
+          to join in on the mass starts, please start as follows:</strong
+        >
+      </p>
+      <ul>
+        <li>Double Metric: Must start at 6:15 am</li>
+        <li>Mt. Tam: start between 6:20 - 6:45 am</li>
+        <li>Century: start between 6:45 am and 7:45 am</li>
+        <li>Metric: start between 7:45 am and 8:45 am</li>
+        <li>Geronimo: start between 8:45 am and 9:15 am</li>
+      </ul>
+
+      <h4>How is the course marked?</h4>
+
+      <p>
+        Routes will be marked with (road) route arrows and signs. However, the
+        most reliable directions can be found on the reverse side of the map or
+        downloadable on RidewithGPS cues.
+      </p>
+
+      <ul>
+        <li>Double Metric: YELLOW A-frame signs and arrows</li>
+        <li>Mt. Tam: BLUE A-frame signs and arrows</li>
+        <li>Century: GREEN A-frame signs and arrows</li>
+        <li>Metric: ORANGE A-frame signs and arrows</li>
+        <li>Geronimo: PURPLE A-frame signs and arrows</li>
+      </ul>
+
+      <h4>Do I need to check in at the start?</h4>
+      <p>
+        Riders must check in to pick up their packets(valid ID required) unless
+        you received your bib & wristband in the mail (choose concierge options
+        during registration).
+      </p>
+      <h4>How difficult are the courses?</h4>
+      <p>
+        We offer a ride to challenge everyone. You must be fit and trained to
+        complete any of the courses.Please review the maps and elevations
+        profiles on Ride with GPS Note: Routes are subject to change.
+      </p>
+
+      <h4>How is the condition of the roads?</h4>
+      <p>
+        Generally good, but you should always be alert. Road conditions on Mt.
+        Tam Fairfax/Bolinas Rd can be variable. Potholes, fissures, and loose
+        gravel are common. One way lane controls may be in effect. The descents
+        in all areas can be wet from dew and some corners are off camber. Ride
+        safe and stay in control.
+      </p>
+
+      <h4>Is there a clothing drop?</h4>
+      <p>
+        Yes! Bag drops will be available at West Marin and Tomales Rest Stops.
+        After the ride, pick up your clothing in the ride expo area near the
+        bicycle parking.
+      </p>
+
+      <h4>Where can I stay nearby?</h4>
+      <p>Hotels closest to Stafford Lake Park include:<br /></p>
+
+      <ul>
+        <li>
+          <a
+            href="https://www.wyndhamhotels.com/days-inn/novato-california/days-inn-novato-san-francisco/overview"
+            >Days Inn by Wyndham Novato</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.redlion.com/americas-best-value-inn/ca/novato/americas-best-value-inn-novato-marin-sonoma"
+            >Americas Best Value Inn in Novato</a
+          >
+        </li>
+        <li>
+          <a href="https://www.innmarin.com/"
+            >Inn Marin and Suites, Ascend Hotel Collection in Novato</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.hilton.com/en/hotels/sforfes-embassy-suites-san-rafael-marin-county/"
+            >Embassy Suites by Hilton/San Rafael</a
+          >
+        </li>
+      </ul>
+
+      <h4>Is there camping at Stafford Lake?</h4>
+      <p>
+        There is no camping allowed at Stafford Lake Park. The nearest RV park
+        is <a href="https://www.novatorvpark.com/">Novato RV Park</a> The
+        closest campgrounds are the
+        <a href="https://www.olemacampground.net/">Olema Campground</a>,
+        <a href="https://www.parks.ca.gov/?page_id=469"
+          >Samuel P Taylor State Park</a
+        >, and
+        <a href="https://koa.com/campgrounds/san-francisco/">Petaluma KOA</a>. A
+        little further away is the
+        <a
+          href="https://www.hipcamp.com/en-US/california/china-camp/back-ranch-meadows-campground"
+          >Back Ranch Campground</a
+        >
+        in China Camp.
+      </p>
+
+      <h4>Where can I rent a bike?</h4>
+      <p>
+        It may be difficult to find rental or demo road bikes in the area. Local
+        bike shops that may be able to help, including
+        <a href="https://marincyclists.com/handlers/celinks.ashx?id=50847"
+          >Mikes Bikes San Rafael</a
+        >
+        and
+        <a href="https://marincyclists.com/handlers/celinks.ashx?id=50849"
+          >Sports Basement Novato</a
+        >.
+      </p>
+
+      <h4>Can I bring my dog?</h4>
+      <p>
+        Unfortunately, Stafford Lake Park does not allow dogs or other domestic
+        animals, except for service animals per the Americans With Disabilities
+        Act.
+      </p>
+      <h4>Can I pick up my packet on Friday?</h4>
+      <p>
+        We do not provide Friday packet pick up, if you would like to receive
+        your packet in the mail please select “Concierge Service “ when
+        registering
+      </p>
+      <h4>Why don’t you give refunds?</h4>
+      <p>
+        When you register, you will have the option of buying purchase
+        protection in case of an emergency that keeps you from riding. Work
+        directly with Purchase Protection, LLC , to obtain your refund. If you
+        do not purchase this service,, then you will not be entitled to a
+        refund. However, you can transfer your registration to another rider.
+      </p>
+      <h4>Can I defer to next year? Why not?</h4>
+      <p>
+        We do not allow deferrals. If you register but are unable to ride the
+        event, you can transfer your registration. Or, if you elected purchase
+        protection, then you can submit a refund claim to
+        <a href="https://www.purchaseprotection.com/"
+          >Purchase Protection LLC for covered circumstances.</a
+        >
+      </p>
+      <h4>Will you have vegetarian and vegan food?</h4>
+      <p>
+        We will have some vegetarian choices at the rest stops and at the after
+        party. There will also be limited plant based options.
+      </p>
+      <h4>Will you have electrolytes and energy gels?</h4>
+      <p>
+        Yes, each rest stop will have electrolyte powder from our in-kind
+        sponsor, Osmo.. Each rest stop will also have limited energy gels,
+        electrolytes, and bars. We concentrate on providing food you wouldn’t
+        normally carry on your usual rides. If you like a particular drink mix
+        or fuel, please bring your own.
+      </p>
+      <h4>My Packet did not come in the mail. Where do I get it?</h4>
+      <p>
+        Please come to the Registration Booth at Stafford Lake on August 1. We
+        are open at 6:00 am
+      </p>
+      <h4>Where's my T-shirt that I ordered?</h4>
+      <p>
+        T-Shirts are available for pick up from the T-shirt booth next to the
+        bike corral when you return from your ride.
+      </p>
+      <h4>Where's my Giordana clothing that I ordered?</h4>
+      <p>
+        Jerseys, shorts/bibs, and socks will be mailed to you. If you order
+        before the cut off date, May 22, 2026, then you should receive your
+        clothing in time to wear it during the Marin Century. If you ordered
+        later than that, you will receive it in the mail in late October.
+      </p>
+    </details>
+  </div>
+</section>
+
+<section id="volunteering">
+  <div class="site-column">
+    <h2>Volunteering</h2>
+    <h3>Sign-ups should open in late June</h3>
+    <p>
+      To ensure the smooth execution of the Marin Century, we are seeking
+      dedicated volunteers to help with a range of tasks, including
+      registration, site setup, food service, SAG drivers, rest stop helpers,
+      course marshals, and general event assistance. Volunteers play a vital
+      role in creating a safe and enjoyable experience for participants,
+      offering support, guidance, and encouragement along the routes. No prior
+      experience is necessary to volunteer for the Marin Century. All that is
+      required is enthusiasm, a positive attitude, and a willingness to
+      contribute to the success of this extraordinary event. Volunteers will
+      receive training and support, ensuring they are well-prepared to fulfill
+      their roles. Lunch is included for shifts of 4 or more hours. In
+      appreciation, volunteers receive T-shirts and are invited to ride the
+      supported workers’ ride on Saturday, August 8, 2026.
+    </p>
+  </div>
+</section>
+
+<section id="sponsors">
+  <div class="site-column">
+    <h2>Sponsorship</h2>
+    <p>
+      Get ready to pedal into unparalleled exposure and community engagement by
+      sponsoring the Marin Century. Chosen by Outdoor Magazine as "One of the
+      Top 25 Rides in the Country", the Marin Century offers an exceptional
+      opportunity for your company to connect with thousands of passionate
+      cyclists and outdoor enthusiasts.
+    </p>
+    <h3>Why Sponsor the Marin Century?</h3>
+    <ul>
+      <li>
+        <strong>Visibility:</strong> Showcase your brand to a diverse audience
+        of cyclists, families, and fitness enthusiasts from across the region.
+        With extensive marketing efforts and media coverage, your logo will be
+        prominently displayed, ensuring widespread recognition.
+      </li>
+      <li>
+        <strong>Community Engagement:</strong> Demonstrate your commitment to
+        health, wellness, and community involvement by supporting an event that
+        promotes active lifestyles and outdoor recreation. Engage directly with
+        participants and spectators to foster lasting connections.
+      </li>
+      <li>
+        <strong>Customized Opportunities:</strong> Tailor your sponsorship
+        package to align with your marketing objectives and budget. From logo
+        placement on event materials to branded merchandise and experiential
+        activations, we offer flexible options to suit your needs.
+      </li>
+      <li>
+        <strong>Positive Impact:</strong> Contribute to the success of a beloved
+        local event while making a meaningful difference in the community. Your
+        sponsorship helps support important initiatives, including cycling
+        advocacy, youth programs, and environmental conservation efforts.
+      </li>
+    </ul>
+    <p>
+      Don't miss this chance to elevate your brand and make a lasting impression
+      on thousands of participants and spectators. Join us in celebrating the
+      spirit of cycling and outdoor adventure at the Marin Century!
+    </p>
+
+    <p>
+      For more information on sponsorship opportunities, please contact
+      <a href="mailto:jeff@marincyclists.com">Jeff Sanchez</a>. Together, let's
+      pedal towards success and unforgettable experiences!
+    </p>
+
+    <h3>Proceeds are Donated to Local and Regional Non Profit Organizations</h3>
+    <h4>Bicycle Coalitions:</h4>
+    <p>
+      Marin County Bicycle Coalition
+      <br />
+      California Bicycle Coalition (CalBike)
+
+      <br />
+      Sonoma County Bicycle Coalition
+
+      <br />
+      San Francisco Bicycle Coalition
+      <br />
+      Silicon Valley Bicycle Coalition
+      <br />
+      Bike East Bay
+      <br />
+    </p>
+
+    <h4>Bicycling Programs for the underserved or disabled</h4>
+    <p>
+      Cycles of Change (Oakland youth bike access)
+      <br />
+      Rich City Rides (Richmond bike education, repair and community)
+      <br />
+      Cory's Ride (provides bikes and training to Marin students)
+      <br />
+      Kelly Brush Foundation (Bicycling and other activities for people with
+      spinal cord injuries)
+      <br />
+      Waterside Workshops (Berkeley job training on bikes and boats)
+      <br />
+      Trips for Kids (Bike access and programming for marginalized youth)
+      <br />
+      BORP (Adaptive athletics for people with mobility and vision disabilities)
+      <br />
+    </p>
+
+    <h4>Local Community Organizations</h4>
+    <p>
+      Tomales Village Community Services District (maintains the park in
+      Tomales)
+      <br />
+      West Marin Community Services (Safety net support)
+      <br />
+      North Marin Community Services (Human services non profit)
+      <br />
+      Opening the World (Underprivileged, transitional age youth who have
+      experienced trauma)
+      <br />
+      Conservation Corps of the North Bay
+      <br />
+      Buckelew Programs (Mental health, supported housing and substance abuse
+      treatment)
+      <br />
+      San Francisco AIDS Foundation
+      <br />
+      Marin County Parks
+      <br />
+      Extrafood (Food recovery program)
+      <br />
+    </p>
+
+    <h4>Local Schools</h4>
+    <p>
+      Bolinas-Stinson Union School
+      <br />
+      San Rafael High School Senior Class and Boosters
+      <br />
+      Laguna Joint School District
+      <br />
+      Lagunitas School District
+      <br />
+      Nicasio School Foundation
+      <br />
+      Shoreline Unified School District
+      <br />
+      Wilson School, Petaluma
+    </p>
+
+    <h4>Cycling Teams</h4>
+    <p>
+      Skyline High School MTB team (Oakland)
+      <br />
+      Novato MTB Middle School team
+      <br />
+      San Rafael MTB team
+      <br />
+      Terra Linda MTB Team
+      <br />
+      Team Swift and Bear Development; (Junior Cycling Development Teams)
+      <br />
+    </p>
+
+    <h4>Partner Non Profits</h4>
+    <p>
+      Marin Amateur Radio Society
+      <br />
+      National Multiple Sclerosis Society
+      <br />
+      Santa Rosa Cycling Club
+    </p>
+  </div>
+</section>
+
+<section id="and-more">
+  <div class="site-column">
+    <h2>And More!</h2>
+    <p>
+      Did you think that was everything? Take a look at our exhaustive list!
+    </p>
+    <h3>The Basics</h3>
+    <ul>
+      <li>Your choice of five well marked courses (37 - 127 miles)</li>
+      <li>Optional mass starts for each route</li>
+      <li>Optional Purchase Protection</li>
+      <li>Multiple well spaced rest stops</li>
+    </ul>
+
+    <h3>Support</h3>
+    <ul>
+      <li>
+        Marin Amateur Radio Society (MARS), and SAG vehicles on all courses
+      </li>
+      <li>Certified mechanics at the Start and at most rest stops</li>
+      <li>California Highway Patrol support at busy intersections</li>
+      <li>First Aid providers at rest stops</li>
+      <li>Paper maps, cue sheets and Ride with GPS electronic directions</li>
+      <li>Turns are marked with direction signs and route arrows</li>
+      <li>Clothing drop bags</li>
+      <li>Bike parking corral at the finish</li>
+    </ul>
+
+    <h3>Extras</h3>
+    <ul>
+      <li>Specialized, high quality commemorative water bottle</li>
+      <li>Top tube sticker showing elevation and rest stop distances</li>
+      <li>Optional 15 minute sports massage</li>
+      <li>Free professional photos</li>
+      <li>Optional advanced delivery of your rider packet via mail service</li>
+    </ul>
+
+    <h3>So Much Food</h3>
+    <ul>
+      <li>
+        Rest stops are stocked with ice cold beverages, fresh local fruit, sweet
+        and salty snacks, energy bars and electrolyte drinks
+      </li>
+      <li>
+        Locally made goodies – focaccia, pie, doughnuts, cinnamon rolls, and
+        cruffins at the rest stops
+      </li>
+      <li>Fresh pre-ride hot morning coffee bar</li>
+      <li>
+        Post-ride unlimited feast with barbecue, burritos, and artisan pizza
+      </li>
+      <li>Delicious small batch gelato or dairy-free sorbet from Fiorello's</li>
+      <li>Home-made smoothies at one of the last rest stops</li>
+      <li>Waffle sliders and coffee at one of the first rest stops</li>
+      <li>Hot dogs and vegetarian sausages at the middle rest stop</li>
+    </ul>
+
+    <h3>It’s a Party</h3>
+    <ul>
+      <li>Your first cold craft beer from Pond Farm Brewing is on us!</li>
+      <li>Live musicians at select rest stops and on course</li>
+      <li>Live music at the finish</li>
+      <li>Bike expo with over a dozen different vendors/organizations</li>
+      <li>Photo backdrop at the finish area</li>
+    </ul>
+  </div>
+</section>
+<footer>
+  <div class="page-column">
+    <div class="site-column">
+      <div id="footer-links">
+        <a href="mailto:centuryregistration@marincyclists.com">Contact Us</a>
+      </div>
+    </div>
+  </div>
 </footer>
 {% endblock content %}
