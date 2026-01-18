@@ -483,6 +483,19 @@
             }
         }
 
+        #club-sponsors__items {
+            display: grid;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .full-width-sponsor{
+            grid-column: 1 / span 2;
+        }
+
+        .sponsor-logo{
+            max-width: 100%;
+        }
+
         #club-rides__items {
             display: grid;
             flex-direction: column;
