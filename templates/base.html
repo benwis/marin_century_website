@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -46,6 +46,33 @@
     gtag("js", new Date());
 
     gtag("config", "G-D8T7SPST03");
+  </script>
+  <!-- Persist UTM tags-->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var params = new URLSearchParams(window.location.search);
+      var utmKeys = [
+        "utm_source",
+        "utm_medium",
+        "utm_campaign",
+        "utm_content",
+        "utm_term",
+      ];
+      var utmString = "";
+      utmKeys.forEach(function (key) {
+        if (params.get(key)) {
+          utmString += "&" + key + "=" + encodeURIComponent(params.get(key));
+        }
+      });
+      if (utmString) {
+        document
+          .querySelectorAll('a[href*="redpodium"]')
+          .forEach(function (link) {
+            var href = link.href;
+            link.href = href + (href.indexOf("?") > -1 ? "" : "?") + utmString;
+          });
+      }
+    });
   </script>
   <body>
     <section class="section">
