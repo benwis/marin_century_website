@@ -49,30 +49,73 @@
   </script>
   <!-- Persist UTM tags-->
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      var params = new URLSearchParams(window.location.search);
-      var utmKeys = [
-        "utm_source",
-        "utm_medium",
-        "utm_campaign",
-        "utm_content",
-        "utm_term",
-      ];
-      var utmString = "";
-      utmKeys.forEach(function (key) {
-        if (params.get(key)) {
-          utmString += "&" + key + "=" + encodeURIComponent(params.get(key));
+    /**
+     * Marin Century UTM → RedPodium PreFill Passthrough
+     * Captures UTM parameters from marincentury.com URLs and appends them
+     * to RedPodium registration links as a prefill value.
+     *
+     * Example: a visitor arriving at marincentury.com/?utm_source=postcard&utm_medium=print&utm_content=novato-bikeworks&utm_campaign=2026mc
+     * will have registration links rewritten to:
+     * marincentury.redpodium.com/2026-marin-century?source=source:postcard|medium:print|content:novato-bikeworks|campaign:2026mc
+     *
+     * IMPORTANT: Replace 'source' in FIELD_NAME with the exact hidden field
+     * name configured in RedPodium's form builder.
+     */
+
+    (function () {
+      "use strict";
+
+      // ── CONFIGURATION ──────────────────────────────
+      var FIELD_NAME = "source"; // ← CONFIRM THIS MATCHES REDPODIUM FIELD NAME
+      // ───────────────────────────────────────────────
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var params = new URLSearchParams(window.location.search);
+
+        // Build combined source string from available UTM params
+        var parts = [];
+        ["utm_source", "utm_medium", "utm_content", "utm_campaign"].forEach(
+          function (key) {
+            var val = params.get(key);
+            if (val) parts.push(key.replace("utm_", "") + ":" + val);
+          },
+        );
+
+        // No UTM params present — nothing to do
+        if (parts.length === 0) return;
+
+        var sourceValue = parts.join("|");
+
+        function tagLinks(root) {
+          (root || document)
+            .querySelectorAll('a[href*="redpodium"]')
+            .forEach(function (link) {
+              try {
+                var url = new URL(link.href);
+                // Don't overwrite if already tagged
+                if (url.searchParams.has(FIELD_NAME)) return;
+                url.searchParams.set(FIELD_NAME, sourceValue);
+                link.href = url.toString();
+              } catch (e) {
+                // Skip malformed URLs
+              }
+            });
         }
-      });
-      if (utmString) {
-        document
-          .querySelectorAll('a[href*="redpodium"]')
-          .forEach(function (link) {
-            var href = link.href;
-            link.href = href + (href.indexOf("?") > -1 ? "" : "?") + utmString;
+
+        // Tag existing links
+        tagLinks();
+
+        // Watch for dynamically added links
+        var observer = new MutationObserver(function (mutations) {
+          mutations.forEach(function (m) {
+            m.addedNodes.forEach(function (node) {
+              if (node.nodeType === 1) tagLinks(node);
+            });
           });
-      }
-    });
+        });
+        observer.observe(document.body, { childList: true, subtree: true });
+      });
+    })();
   </script>
   <body>
     <section class="section">
