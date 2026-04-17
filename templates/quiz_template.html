@@ -1,1111 +1,1245 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Marin Century Route Quiz</title>
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <head>
+        <meta charset="utf-8" />
+        <title>Marin Century Route Quiz</title>
+        <meta
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <meta property="og:title" content="Marin Century" />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:image"
-      content="https://marincentury.com/img/MC24_ChilenoJerseys.jpg"
-    />
-    <meta property="og:url" content="https://marincentury.com" />
-    <meta
-      property="og:description"
-      content="The Marin Century is one of the premier centuries in Northern California, featuring iconic Bay Area routes and an amazing atmosphere."
-    />
+        <meta property="og:title" content="Marin Century" />
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:image"
+            content="https://marincentury.com/img/MC24_ChilenoJerseys.jpg"
+        />
+        <meta property="og:url" content="https://marincentury.com" />
+        <meta
+            property="og:description"
+            content="The Marin Century is one of the premier centuries in Northern California, featuring iconic Bay Area routes and an amazing atmosphere."
+        />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&family=BBH+Sans+Bogle&family=BBH+Sans+Hegarty&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/style.css" />
-  </head>
-  <!-- Google tag (gtag.js) -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-D8T7SPST03"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "G-D8T7SPST03");
-  </script>
-  <!-- Persist UTM tags-->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      var params = new URLSearchParams(window.location.search);
-      var utmKeys = [
-        "utm_source",
-        "utm_medium",
-        "utm_campaign",
-        "utm_content",
-        "utm_term",
-      ];
-      var utmString = "";
-      utmKeys.forEach(function (key) {
-        if (params.get(key)) {
-          utmString += "&" + key + "=" + encodeURIComponent(params.get(key));
-        }
-      });
-      if (utmString) {
-        document
-          .querySelectorAll('a[href*="redpodium"]')
-          .forEach(function (link) {
-            var href = link.href;
-            link.href = href + (href.indexOf("?") > -1 ? "" : "?") + utmString;
-          });
-      }
-    });
-  </script>
-  <body>
-    <header>
-      <div id="header__notices">
-        Marin Century 2026 is on August 1st! &rarr;
-      </div>
-      <div id="header__main">
-        <div id="header__mobile-menu">
-          <div id="header__logo-mobile">
-            <img id="header__image" src="/img/marin_century_stacked.png" />
-          </div>
-
-          <input type="checkbox" name="menu-toggle" id="menu-toggle" />
-
-          <label for="menu-toggle" id="menu-toggle-label">
-            <svg
-              id="show-menu-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 17h-12v-2h12v2zm0-4h-12v-2h12v2zm0-4h-12v-2h12v2z"
-              />
-            </svg>
-            <svg
-              id="hide-menu-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.151 17.943l-4.143-4.102-4.117 4.159-1.833-1.833 4.104-4.157-4.162-4.119 1.833-1.833 4.155 4.102 4.106-4.16 1.849 1.849-4.1 4.141 4.157 4.104-1.849 1.849z"
-              />
-            </svg>
-          </label>
-
-          <nav id="header__mobile-nav">
-            <ul id="header__mobile-nav-list">
-              <li><a href="/#routes">Routes</a></li>
-              <li><a href="/#details">Details</a></li>
-              <li><a href="/#volunteering">Volunteering</a></li>
-              <li><a href="/#sponsors">Sponsors</a></li>
-              <li><a href="/#accomodations">Accomodations</a></li>
-              <li><a href="/#merch" class="highlight">Merchandise</a></li>
-              <li><a href="/#faq">FAQ</a></li>
-              <li>
-                <a href="https://marincentury.redpodium.com/2026-marin-century"
-                  >Register</a
-                >
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div id="header__desktop-menu">
-          <nav id="header__desktop-nav">
-            <ul id="header__nav-left" class="header__nav-list">
-              <li><a href="/#routes">Routes</a></li>
-              <li><a href="/#details">Details</a></li>
-              <li><a href="/#volunteering">Volunteering</a></li>
-              <li><a href="/#sponsors">Sponsors</a></li>
-            </ul>
-            <div id="header__logo">
-              <img
-                width="200"
-                id="header__image"
-                src="/img/marin_century_stacked.png"
-              />
-            </div>
-            <ul id="header__nav-right" class="header__nav-list">
-              <li><a href="/#accomodations">Accomodations</a></li>
-              <li><a href="/#merch" class="highlight">Merchandise</a></li>
-              <li><a href="/#faq">FAQ</a></li>
-              <li>
-                <a href="https://marincentury.redpodium.com/2026-marin-century"
-                  >Register</a
-                >
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
-    <section class="section">
-      <div class="quiz-container">
-        {% block content %}
-
-        <div class="mc-quiz" id="mcRouteQuiz">
-          <!-- HEADER -->
-          <div class="mc-quiz-header">
-            <div class="mc-quiz-icon">&#x1F6B4;</div>
-            <div class="mc-quiz-title">Find Your Marin Century Match</div>
-            <div class="mc-quiz-subtitle">
-              4 quick questions. Zero judgment. One great route (or a heroic
-              volunteer shift).
-            </div>
-          </div>
-
-          <!-- PROGRESS -->
-          <div class="mc-quiz-progress">
-            <div class="mc-quiz-progress-fill" id="mcQuizProgress"></div>
-          </div>
-
-          <!-- BODY -->
-          <div class="mc-quiz-body">
-            <!-- Q1: DISTANCE -->
-            <div class="mc-quiz-screen mc-active" data-q="1">
-              <div class="mc-quiz-step">Question 1 of 4</div>
-              <div class="mc-quiz-question">Longest ride in a single day?</div>
-              <div class="mc-quiz-hint">
-                Be honest — we won't check your Strava. Think single-day glory,
-                not your combined weekly grocery runs.
-              </div>
-              <div class="mc-quiz-options">
-                <div
-                  class="mc-quiz-option"
-                  data-value="5"
-                  onclick="mcQuizSelect(this)"
-                >
-                  <div class="mc-quiz-option-icon">&#x1F366;</div>
-                  <div class="mc-quiz-option-text">
-                    <div class="mc-quiz-option-label">
-                      Does walking to the gelato stand count?
-                    </div>
-                    <div class="mc-quiz-option-desc">
-                      I'm here for the vibes, not the odometer.
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="mc-quiz-option"
-                  data-value="1"
-                  onclick="mcQuizSelect(this)"
-                >
-                  <div class="mc-quiz-option-icon">&#x1F331;</div>
-                  <div class="mc-quiz-option-text">
-                    <div class="mc-quiz-option-label">
-                      I'm here for a good time, not a long time
-                    </div>
-                    <div class="mc-quiz-option-desc">
-                      Still building up my distance.
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="mc-quiz-option"
-                  data-value="2"
-                  onclick="mcQuizSelect(this)"
-                >
-                  <div class="mc-quiz-option-icon">&#x1F333;</div>
-                  <div class="mc-quiz-option-text">
-                    <div class="mc-quiz-option-label">The Half-Way Hero</div>
-                    <div class="mc-quiz-option-desc">
-                      Comfortable with half-century vibes.
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="mc-quiz-option"
-                  data-value="3"
-                  onclick="mcQuizSelect(this)"
-                >
-                  <div class="mc-quiz-option-icon">&#x26F0;&#xFE0F;</div>
-                  <div class="mc-quiz-option-text">
-                    <div class="mc-quiz-option-label">Century-Curious</div>
-                    <div class="mc-quiz-option-desc">
-                      I've conquered a metric and lived to tell the tale.
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="mc-quiz-option"
-                  data-value="4"
-                  onclick="mcQuizSelect(this)"
-                >
-                  <div class="mc-quiz-option-icon">&#x1F451;</div>
-                  <div class="mc-quiz-option-text">
-                    <div class="mc-quiz-option-label">
-                      My bike seat is my throne
-                    </div>
-                    <div class="mc-quiz-option-desc">
-                      I eat centuries for breakfast.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="mc-quiz-nav">
-                <div></div>
-                <div></div>
-              </div>
-            </div>
-
-            <!-- Q2: ELEVATION -->
-            <div class="mc-quiz-screen" data-q="2">
-              <div class="mc-quiz-step">Question 2 of 4</div>
-              <div class="mc-quiz-question">How do you feel about gravity?</div>
-              <div class="mc-quiz-hint">
-                Marin is beautiful, but some of that beauty is tilted at a 10%
-                grade.
-              </div>
-              <div class="mc-quiz-options">
-                <div
-                  class="mc-quiz-option"
-                  data-value="5"
-                  onclick="mcQuizSelect(this)"
-                >
-                  <div class="mc-quiz-option-icon">&#x1F6B6;</div>
-                  <div class="mc-quiz-option-text">
-                    <div class="mc-quiz-option-label">
-                      My favorite grade is 0%
-                    </div>
-                    <div class="mc-quiz-option-desc">
-                      Climbing is not in my vocabulary. Stafford Lake is just
-                      fine.
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="mc-quiz-option"
-                  data-value="1"
-                  onclick="mcQuizSelect(this)"
-                >
-                  <div class="mc-quiz-option-icon">&#x1F60C;</div>
-                  <div class="mc-quiz-option-text">
-                    <div class="mc-quiz-option-label">Keep it manageable</div>
-                    <div class="mc-quiz-option-desc">
-                      Rolling hills: yes. Suffering: no.
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="mc-quiz-option"
-                  data-value="2"
-                  onclick="mcQuizSelect(this)"
-                >
-                  <div class="mc-quiz-option-icon">&#x1F4AA;</div>
-                  <div class="mc-quiz-option-text">
-                    <div class="mc-quiz-option-label">
-                      I can handle some serious hills
-                    </div>
-                    <div class="mc-quiz-option-desc">
-                      4,000–7,000 ft? I can work with that.
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="mc-quiz-option"
-                  data-value="3"
-                  onclick="mcQuizSelect(this)"
-                >
-                  <div class="mc-quiz-option-icon">&#x1F3D4;&#xFE0F;</div>
-                  <div class="mc-quiz-option-text">
-                    <div class="mc-quiz-option-label">
-                      The steeper the better
-                    </div>
-                    <div class="mc-quiz-option-desc">
-                      Mt. Tam energy. Iconic climbs, please.
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="mc-quiz-option"
-                  data-value="4"
-                  onclick="mcQuizSelect(this)"
-                >
-                  <div class="mc-quiz-option-icon">&#x1F929;</div>
-                  <div class="mc-quiz-option-text">
-                    <div class="mc-quiz-option-label">
-                      I want an epic challenge
-                    </div>
-                    <div class="mc-quiz-option-desc">
-                      10,000+ ft sounds… honestly delightful.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="mc-quiz-nav">
-                <button
-                  type="button"
-                  class="mc-quiz-btn mc-quiz-btn-back"
-                  onclick="mcQuizBack()"
-                >
-                  <svg viewBox="0 0 24 24">
-                    <polyline points="15 18 9 12 15 6" />
-                  </svg>
-                  Back
-                </button>
-                <div></div>
-              </div>
-            </div>
-
-            <!-- Q3: GOALS -->
-            <div class="mc-quiz-screen" data-q="3">
-              <div class="mc-quiz-step">Question 3 of 4</div>
-              <div class="mc-quiz-question">
-                What does victory look like to you?
-              </div>
-              <div class="mc-quiz-hint">
-                Aside from the post-ride gelato and beer, of course.
-              </div>
-              <div class="mc-quiz-options">
-                <div
-                  class="mc-quiz-option"
-                  data-value="5"
-                  onclick="mcQuizSelect(this)"
-                >
-                  <div class="mc-quiz-option-icon">&#x1F973;</div>
-                  <div class="mc-quiz-option-text">
-                    <div class="mc-quiz-option-label">
-                      The Hero Behind the Scenes
-                    </div>
-                    <div class="mc-quiz-option-desc">
-                      I'd rather hand out the snacks than desperately need them.
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="mc-quiz-option"
-                  data-value="1"
-                  onclick="mcQuizSelect(this)"
-                >
-                  <div class="mc-quiz-option-icon">&#x1F305;</div>
-                  <div class="mc-quiz-option-text">
-                    <div class="mc-quiz-option-label">
-                      Professional Sightseer
-                    </div>
-                    <div class="mc-quiz-option-desc">
-                      I'm here for the views, the vibes, and the rest stops.
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="mc-quiz-option"
-                  data-value="2"
-                  onclick="mcQuizSelect(this)"
-                >
-                  <div class="mc-quiz-option-icon">&#x1F3AF;</div>
-                  <div class="mc-quiz-option-text">
-                    <div class="mc-quiz-option-label">
-                      Hit a personal milestone
-                    </div>
-                    <div class="mc-quiz-option-desc">
-                      First metric/century… or a PR that makes Strava nervous.
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="mc-quiz-option"
-                  data-value="3"
-                  onclick="mcQuizSelect(this)"
-                >
-                  <div class="mc-quiz-option-icon">&#x1F3C6;</div>
-                  <div class="mc-quiz-option-text">
-                    <div class="mc-quiz-option-label">
-                      Type 2 Fun Enthusiast
-                    </div>
-                    <div class="mc-quiz-option-desc">
-                      I want to suffer a little now so I can brag a lot later.
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="mc-quiz-option"
-                  data-value="4"
-                  onclick="mcQuizSelect(this)"
-                >
-                  <div class="mc-quiz-option-icon">&#x1F30B;</div>
-                  <div class="mc-quiz-option-text">
-                    <div class="mc-quiz-option-label">Local Legend Status</div>
-                    <div class="mc-quiz-option-desc">
-                      An all-day endurance feat I'll remember forever.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="mc-quiz-nav">
-                <button
-                  type="button"
-                  class="mc-quiz-btn mc-quiz-btn-back"
-                  onclick="mcQuizBack()"
-                >
-                  <svg viewBox="0 0 24 24">
-                    <polyline points="15 18 9 12 15 6" />
-                  </svg>
-                  Back
-                </button>
-                <div></div>
-              </div>
-            </div>
-
-            <!-- Q4: THE CLOCK -->
-            <div class="mc-quiz-screen" data-q="4">
-              <div class="mc-quiz-step">Question 4 of 4</div>
-              <div class="mc-quiz-question">
-                How much "quality time" do you want with your bike?
-              </div>
-              <div class="mc-quiz-hint">
-                Remember: the faster you ride, the sooner the party starts.
-              </div>
-              <div class="mc-quiz-options">
-                <div
-                  class="mc-quiz-option"
-                  data-value="5"
-                  onclick="mcQuizSelect(this)"
-                >
-                  <div class="mc-quiz-option-icon">&#x1F37B;</div>
-                  <div class="mc-quiz-option-text">
-                    <div class="mc-quiz-option-label">
-                      The All-Party, No-Pedaling Plan
-                    </div>
-                    <div class="mc-quiz-option-desc">
-                      Food, beer, music… and maybe a heroic volunteer shift.
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="mc-quiz-option"
-                  data-value="1"
-                  onclick="mcQuizSelect(this)"
-                >
-                  <div class="mc-quiz-option-icon">&#x23F0;</div>
-                  <div class="mc-quiz-option-text">
-                    <div class="mc-quiz-option-label">The Sprinter</div>
-                    <div class="mc-quiz-option-desc">
-                      Quick rip, then straight to the party.
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="mc-quiz-option"
-                  data-value="2"
-                  onclick="mcQuizSelect(this)"
-                >
-                  <div class="mc-quiz-option-icon">&#x2600;&#xFE0F;</div>
-                  <div class="mc-quiz-option-text">
-                    <div class="mc-quiz-option-label">The Explorer</div>
-                    <div class="mc-quiz-option-desc">
-                      Half-day ride, maximum snack strategy.
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="mc-quiz-option"
-                  data-value="3"
-                  onclick="mcQuizSelect(this)"
-                >
-                  <div class="mc-quiz-option-icon">&#x1F31E;</div>
-                  <div class="mc-quiz-option-text">
-                    <div class="mc-quiz-option-label">The Overachiever</div>
-                    <div class="mc-quiz-option-desc">
-                      Full day. Full experience. Full pockets of gummy bears.
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="mc-quiz-option"
-                  data-value="4"
-                  onclick="mcQuizSelect(this)"
-                >
-                  <div class="mc-quiz-option-icon">&#x1F303;</div>
-                  <div class="mc-quiz-option-text">
-                    <div class="mc-quiz-option-label">The Sun-Seeker</div>
-                    <div class="mc-quiz-option-desc">
-                      All-day epic. I live for this (apparently).
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="mc-quiz-nav">
-                <button
-                  type="button"
-                  class="mc-quiz-btn mc-quiz-btn-back"
-                  onclick="mcQuizBack()"
-                >
-                  <svg viewBox="0 0 24 24">
-                    <polyline points="15 18 9 12 15 6" />
-                  </svg>
-                  Back
-                </button>
-                <div></div>
-              </div>
-            </div>
-
-            <!-- RESULT -->
-            <div class="mc-quiz-screen" data-q="result" id="mcQuizResult"></div>
-          </div>
-        </div>
-
-        {% endblock content %}
-      </div>
-    </section>
-    <footer>
-      <div class="page-column">
-        <div class="site-column">
-          <div id="footer-links">
-            <a href="https://marincentury.redpodium.com/2026-marin-century"
-              >Register</a
-            >
-            <a href="mailto:centuryregistration@marincyclists.com"
-              >Contact Us</a
-            >
-          </div>
-        </div>
-      </div>
-    </footer>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&family=BBH+Sans+Bogle&family=BBH+Sans+Hegarty&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/style.css" />
+    </head>
+    <!-- Google tag (gtag.js) -->
+    <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-D8T7SPST03"
+    ></script>
     <script>
-      (function () {
-        // --- GOOGLE APPS SCRIPT LOGGING ---
-        // Replace this URL with your deployed Apps Script web app URL
-        var APPS_SCRIPT_URL =
-          "https://script.google.com/macros/s/AKfycbzPTLiiixYxzCnV1jiPHHW4Ta-4hzAe0xhxouMp8ObG4xyRzW9ZwzUhhi6o8LpVLNVa0A/exec";
-
-        function logQuizResult(answers, routeKey, matchPct) {
-          if (
-            APPS_SCRIPT_URL ===
-            "https://script.google.com/macros/s/AKfycbzPTLiiixYxzCnV1jiPHHW4Ta-4hzAe0xhxouMp8ObG4xyRzW9ZwzUhhi6o8LpVLNVa0A/exec"
-          )
-            return;
-          var route = routes[routeKey];
-          var payload = {
-            timestamp: new Date().toISOString(),
-            q1_longest_ride: answers[1] || "",
-            q2_climbing: answers[2] || "",
-            q3_goal: answers[3] || "",
-            q4_time: answers[4] || "",
-            recommended_route: route.name,
-            match_pct: matchPct,
-          };
-          try {
-            fetch(APPS_SCRIPT_URL, {
-              method: "POST",
-              mode: "no-cors",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(payload),
-            });
-          } catch (e) {
-            /* fail silently */
-          }
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
         }
+        gtag("js", new Date());
 
-        // Log a follow-up action (rating, button click) as an update
-        function logAction(actionType, actionValue) {
-          if (APPS_SCRIPT_URL === "YOUR_APPS_SCRIPT_URL_HERE") return;
-          try {
-            fetch(APPS_SCRIPT_URL, {
-              method: "POST",
-              mode: "no-cors",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({
-                timestamp: new Date().toISOString(),
-                action_type: actionType,
-                action_value: actionValue,
-              }),
-            });
-          } catch (e) {
-            /* fail silently */
-          }
-        }
-
-        // Star rating handler
-        var quizRating = 0;
-        window.mcQuizRate = function (stars) {
-          quizRating = stars;
-          // Update star visuals
-          document.querySelectorAll(".mc-quiz-star").forEach(function (el, i) {
-            if (i < stars) {
-              el.classList.add("mc-star-active");
-            } else {
-              el.classList.remove("mc-star-active");
-            }
-          });
-          logAction("rating", stars);
-        };
-
-        // Button click tracker
-        window.mcQuizTrackClick = function (buttonName) {
-          logAction("button_click", buttonName);
-        };
-
-        // --- UTM TRACKING ---
-        var REDPODIUM_BASE =
-          "https://marincentury.redpodium.com/2026-marin-century";
-        var MC_BASE = "https://marincentury.com";
-
-        function buildUTM(baseUrl, content) {
-          var sep = baseUrl.indexOf("?") === -1 ? "?" : "&";
-          return (
-            baseUrl +
-            sep +
-            "utm_source=quiz" +
-            "&utm_medium=referral" +
-            "&utm_campaign=route-quiz" +
-            "&utm_content=" +
-            encodeURIComponent(content)
-          );
-        }
-
-        // --- ROUTE DATA ---
-        var routes = {
-          geronimo: {
-            name: "Geronimo",
-            miles: "37",
-            climbing: "2,269 ft",
-            price: "$80",
-            time: "3–4 hrs",
-            difficulty: "Beginner-Friendly",
-            diffClass: "easy",
-            desc: "Ride through the beautiful San Geronimo Valley and past Nicasio Reservoir, under the towering redwoods of Samuel P. Taylor State Park. One fully stocked rest stop with live music, plus two water stops. The perfect introduction to the Marin Century experience.",
-            tagline: "Beautiful scenery, totally achievable",
-          },
-          metric: {
-            name: "Metric Century",
-            miles: "64",
-            climbing: "4,309 ft",
-            price: "$100",
-            time: "4–6 hrs",
-            difficulty: "Moderate",
-            diffClass: "moderate",
-            desc: "Our most popular route. Travel through West Marin, past Nicasio Reservoir and along the scenic shores of Tomales Bay on Highway 1 to the country town of Tomales. Multiple well-stocked rest stops with live music at every one.",
-            tagline: "The fan favorite — scenic and satisfying",
-          },
-          century: {
-            name: "Century",
-            miles: "100",
-            climbing: "6,606 ft",
-            price: "$110",
-            time: "6–9 hrs",
-            difficulty: "Challenging",
-            diffClass: "challenging",
-            desc: "The classic hundred-miler. Tomales Bay views, rolling Chileno Valley Road, challenging Wilson Hill, plus bonus loops through the redwoods and the edges of Petaluma. A memorable, iconic day whether it's your first century or your fiftieth.",
-            tagline: "The iconic hundred — a day you'll never forget",
-          },
-          tam: {
-            name: "Mount Tam",
-            miles: "92",
-            climbing: "8,931 ft",
-            price: "$120",
-            time: "7–10 hrs",
-            difficulty: "Very Challenging",
-            diffClass: "challenging",
-            desc: "For experienced climbers who want the legendary Mt. Tamalpais ascent. Breathtaking summit views, one of the best descents in the Bay Area, and the satisfaction of conquering a Marin County icon. Serious climbing, serious reward.",
-            tagline: "Conquer the mountain, earn the views",
-          },
-          double: {
-            name: "Double Metric",
-            miles: "127",
-            climbing: "11,079 ft",
-            price: "$140",
-            time: "9–13 hrs",
-            difficulty: "Epic Endurance",
-            diffClass: "epic",
-            desc: "The ultimate challenge. Combines the best of West Marin with the Mt. Tam climb — 127 miles and over 11,000 feet of elevation gain. Strict time cutoffs apply. For experienced endurance riders who want to push their absolute limits.",
-            tagline: "The ultimate test — for those who dare",
-          },
-          volunteer: {
-            name: "Volunteer Crew",
-            miles: "0",
-            climbing: "0 ft",
-            price: "Free",
-            time: "~4 hrs",
-            difficulty: "You cracked the code",
-            diffClass: "volunteer",
-            desc: "While everyone else is battling gravity and reconsidering their life choices on a 10% grade, you'll be the one making the magic happen for 2,500 of your closest cycling friends.",
-            tagline: "The real MVPs of the Marin Century",
-          },
-        };
-
-        var diffColors = {
-          easy: { bg: "#E6F4EA", color: "#1B7340" },
-          moderate: { bg: "#FFF3E0", color: "#C66900" },
-          challenging: { bg: "#FCE4EC", color: "#B71C1C" },
-          epic: { bg: "#F3E5F5", color: "#7B1FA2" },
-          volunteer: { bg: "#FFF8E1", color: "#E6A817" },
-        };
-
-        // --- SCORING MATRIX ---
-        // Each answer adds points to [geronimo, metric, century, tam, double]
-        var scoring = {
-          1: {
-            // Q1: Longest ride
-            1: [5, 2, 0, 0, 0],
-            2: [3, 5, 2, 1, 0],
-            3: [0, 3, 5, 4, 2],
-            4: [0, 1, 4, 4, 5],
-          },
-          2: {
-            // Q2: Climbing
-            1: [5, 3, 1, 0, 0],
-            2: [1, 4, 5, 2, 1],
-            3: [0, 1, 3, 5, 3],
-            4: [0, 0, 2, 4, 5],
-          },
-          3: {
-            // Q3: Goal
-            1: [5, 4, 2, 1, 0],
-            2: [2, 5, 4, 2, 1],
-            3: [0, 2, 4, 5, 3],
-            4: [0, 0, 2, 3, 5],
-          },
-          4: {
-            // Q4: Time
-            1: [5, 1, 0, 0, 0],
-            2: [2, 5, 2, 1, 0],
-            3: [0, 2, 5, 4, 2],
-            4: [0, 0, 3, 3, 5],
-          },
-        };
-
-        var answers = {};
-        var currentQ = 1;
-        var totalQ = 4;
-
-        // --- QUIZ INTERACTION ---
-        window.mcQuizSelect = function (el) {
-          var screen = el.closest(".mc-quiz-screen");
-          var qNum = parseInt(screen.getAttribute("data-q"));
-          // Deselect siblings
-          screen.querySelectorAll(".mc-quiz-option").forEach(function (opt) {
-            opt.classList.remove("mc-selected");
-          });
-          el.classList.add("mc-selected");
-          answers[qNum] = parseInt(el.getAttribute("data-value"));
-
-          // Auto-advance after brief pause for visual feedback
-          setTimeout(function () {
-            if (qNum < totalQ) {
-              currentQ = qNum + 1;
-              showScreen(currentQ);
-              updateProgress();
-            } else {
-              // Last question — show result
-              mcQuizShowResult();
-            }
-          }, 400);
-        };
-
-        window.mcQuizBack = function () {
-          if (currentQ <= 1) return;
-          currentQ--;
-          showScreen(currentQ);
-          updateProgress();
-        };
-
-        window.mcQuizShowResult = function () {
-          var winnerKey, matchPct;
-
-          // --- VOLUNTEER SHORT-CIRCUIT ---
-          // Any "volunteer" answer (value 5) on any question triggers volunteer result
-          if (
-            answers[1] === 5 ||
-            answers[2] === 5 ||
-            answers[3] === 5 ||
-            answers[4] === 5
-          ) {
-            winnerKey = "volunteer";
-            matchPct = 100;
-            var route = routes[winnerKey];
-            var dc = diffColors[route.diffClass];
-
-            var html =
-              '<div class="mc-quiz-result">' +
-              '<div class="mc-quiz-result-badge" style="background:' +
-              dc.bg +
-              ";color:" +
-              dc.color +
-              ';">' +
-              route.difficulty +
-              "</div>" +
-              '<div class="mc-quiz-result-name">You got: ' +
-              route.name +
-              "</div>" +
-              '<p style="font-family:var(--mc-font-display);font-size:15px;color:var(--mc-gray-400);margin-bottom:4px;">' +
-              route.tagline +
-              "</p>" +
-              '<div class="mc-quiz-result-match">&#x2705; ' +
-              matchPct +
-              "% match for you</div>" +
-              '<p class="mc-quiz-result-desc">' +
-              route.desc +
-              "</p>" +
-              '<div class="mc-quiz-vol-perks">' +
-              '<div class="mc-quiz-vol-perks-title">Why You\'re Our MVP:</div>' +
-              '<div class="mc-quiz-vol-perk">' +
-              '<div class="mc-quiz-vol-perk-icon">&#x1F39F;&#xFE0F;</div>' +
-              '<div class="mc-quiz-vol-perk-text"><strong>The "All-Access" Pass:</strong> You get the legendary rest-stop snacks and the finish-line food, music, and party — without the 4,000-calorie debt.</div>' +
-              "</div>" +
-              '<div class="mc-quiz-vol-perk">' +
-              '<div class="mc-quiz-vol-perk-icon">&#x1F60E;</div>' +
-              '<div class="mc-quiz-vol-perk-text"><strong>Lycra Optional:</strong> You get to look cool and stay comfortable. No chamois cream required.</div>' +
-              "</div>" +
-              '<div class="mc-quiz-vol-perk">' +
-              '<div class="mc-quiz-vol-perk-icon">&#x1F64F;</div>' +
-              '<div class="mc-quiz-vol-perk-text"><strong>Maximum Appreciation:</strong> You\'ll receive approximately 1,000 "thank yous" from very tired, very grateful strangers.</div>' +
-              "</div>" +
-              "</div>" +
-              '<div class="mc-quiz-rating">' +
-              '<div class="mc-quiz-rating-label">Rate this quiz</div>' +
-              '<div class="mc-quiz-stars">' +
-              '<span class="mc-quiz-star" onclick="mcQuizRate(1)">&#x2B50;</span>' +
-              '<span class="mc-quiz-star" onclick="mcQuizRate(2)">&#x2B50;</span>' +
-              '<span class="mc-quiz-star" onclick="mcQuizRate(3)">&#x2B50;</span>' +
-              '<span class="mc-quiz-star" onclick="mcQuizRate(4)">&#x2B50;</span>' +
-              '<span class="mc-quiz-star" onclick="mcQuizRate(5)">&#x2B50;</span>' +
-              "</div>" +
-              "</div>" +
-              '<a href="mailto:Volunteers@MarinCentury.com?subject=' +
-              encodeURIComponent(
-                "I'm interested in Volunteering at the best Cycling event",
-              ) +
-              '" class="mc-quiz-register-btn" style="background:var(--mc-gold);box-shadow:0 4px 16px rgba(229,168,23,0.3);" onclick="mcQuizTrackClick(\'volunteer_email\')">&#x1F64C; Volunteer for the Marin Century</a>' +
-              '<a href="' +
-              buildUTM(MC_BASE, "volunteer") +
-              '" class="mc-quiz-learn-more-btn" target="_blank" onclick="mcQuizTrackClick(\'learn_more\')">&#x1F30A; Learn more at MarinCentury.com</a>' +
-              '<div class="mc-quiz-retake" onclick="mcQuizRetake()">&#x21BB; Retake quiz</div>' +
-              "</div>";
-
-            document.getElementById("mcQuizResult").innerHTML = html;
-            logQuizResult(answers, winnerKey, matchPct);
-            showScreen("result");
-            document.getElementById("mcQuizProgress").style.width = "100%";
-            return;
-          }
-
-          // --- NORMAL SCORING ---
-          var routeKeys = ["geronimo", "metric", "century", "tam", "double"];
-          var scores = [0, 0, 0, 0, 0];
-
-          for (var q = 1; q <= totalQ; q++) {
-            var val = answers[q];
-            if (val && scoring[q] && scoring[q][val]) {
-              var pts = scoring[q][val];
-              for (var i = 0; i < 5; i++) {
-                scores[i] += pts[i];
-              }
-            }
-          }
-
-          // Experience guard: Under 30 mi or 30-60 mi cannot be matched to Mt Tam or Double Metric
-          if (answers[1] === 1 || answers[1] === 2) {
-            scores[3] = 0; // tam
-            scores[4] = 0; // double
-          }
-
-          // Find winner
-          var maxScore = Math.max.apply(null, scores);
-          var winnerIdx = scores.indexOf(maxScore);
-          winnerKey = routeKeys[winnerIdx];
-          var route = routes[winnerKey];
-          var dc = diffColors[route.diffClass];
-
-          // Get match percentage (normalize to 80-99 range)
-          var totalPossible = totalQ * 5;
-          matchPct = Math.round(80 + (scores[winnerIdx] / totalPossible) * 19);
-
-          // Get runner-up routes
-          var ranked = routeKeys
-            .map(function (key, i) {
-              return { key: key, score: scores[i] };
-            })
-            .sort(function (a, b) {
-              return b.score - a.score;
-            });
-          var alts = ranked
-            .filter(function (r) {
-              return r.key !== winnerKey;
-            })
-            .slice(0, 2);
-
-          // Build result HTML
-          var html =
-            '<div class="mc-quiz-result">' +
-            '<div class="mc-quiz-result-badge" style="background:' +
-            dc.bg +
-            ";color:" +
-            dc.color +
-            ';">' +
-            route.difficulty +
-            "</div>" +
-            '<div class="mc-quiz-result-name">' +
-            route.name +
-            "</div>" +
-            '<p style="font-family:var(--mc-font-display);font-size:15px;color:var(--mc-gray-400);margin-bottom:4px;">' +
-            route.tagline +
-            "</p>" +
-            '<div class="mc-quiz-result-stats">' +
-            '<div class="mc-quiz-result-stat"><div class="mc-quiz-result-stat-value">' +
-            route.miles +
-            '</div><div class="mc-quiz-result-stat-label">Miles</div></div>' +
-            '<div class="mc-quiz-result-stat"><div class="mc-quiz-result-stat-value">' +
-            route.climbing +
-            '</div><div class="mc-quiz-result-stat-label">Climbing</div></div>' +
-            '<div class="mc-quiz-result-stat"><div class="mc-quiz-result-stat-value">' +
-            route.time +
-            '</div><div class="mc-quiz-result-stat-label">Est. Time</div></div>' +
-            "</div>" +
-            '<div class="mc-quiz-result-match">&#x2705; ' +
-            matchPct +
-            "% match for you</div>" +
-            '<p class="mc-quiz-result-desc">' +
-            route.desc +
-            "</p>" +
-            '<div class="mc-quiz-rating">' +
-            '<div class="mc-quiz-rating-label">Rate this quiz</div>' +
-            '<div class="mc-quiz-stars">' +
-            '<span class="mc-quiz-star" onclick="mcQuizRate(1)">&#x2B50;</span>' +
-            '<span class="mc-quiz-star" onclick="mcQuizRate(2)">&#x2B50;</span>' +
-            '<span class="mc-quiz-star" onclick="mcQuizRate(3)">&#x2B50;</span>' +
-            '<span class="mc-quiz-star" onclick="mcQuizRate(4)">&#x2B50;</span>' +
-            '<span class="mc-quiz-star" onclick="mcQuizRate(5)">&#x2B50;</span>' +
-            "</div>" +
-            "</div>" +
-            '<a href="' +
-            buildUTM(REDPODIUM_BASE, winnerKey) +
-            '" class="mc-quiz-register-btn" onclick="mcQuizTrackClick(\'register\')">&#x1F6B4; Register for the ' +
-            route.name +
-            "</a>" +
-            '<a href="' +
-            buildUTM(MC_BASE, winnerKey) +
-            '" class="mc-quiz-learn-more-btn" target="_blank" onclick="mcQuizTrackClick(\'learn_more\')">&#x1F30A; Learn more at MarinCentury.com</a>' +
-            '<div class="mc-quiz-result-alt">' +
-            '<div class="mc-quiz-result-alt-label">Also a great fit for you</div>' +
-            '<div class="mc-quiz-result-alt-routes">' +
-            alts
-              .map(function (a) {
-                var r = routes[a.key];
-                return (
-                  '<span class="mc-quiz-alt-chip" onclick="mcQuizShowAlt(\'' +
-                  a.key +
-                  "')\">" +
-                  r.name +
-                  " (" +
-                  r.miles +
-                  " mi)</span>"
-                );
-              })
-              .join("") +
-            "</div>" +
-            "</div>" +
-            '<div class="mc-quiz-retake" onclick="mcQuizRetake()">&#x21BB; Retake quiz</div>' +
-            "</div>";
-
-          document.getElementById("mcQuizResult").innerHTML = html;
-          logQuizResult(answers, winnerKey, matchPct);
-          showScreen("result");
-          // Full progress
-          document.getElementById("mcQuizProgress").style.width = "100%";
-        };
-
-        window.mcQuizShowAlt = function (key) {
-          var route = routes[key];
-          var dc = diffColors[route.diffClass];
-
-          var html =
-            '<div class="mc-quiz-result">' +
-            '<div class="mc-quiz-result-badge" style="background:' +
-            dc.bg +
-            ";color:" +
-            dc.color +
-            ';">' +
-            route.difficulty +
-            "</div>" +
-            '<div class="mc-quiz-result-name">' +
-            route.name +
-            "</div>" +
-            '<p style="font-family:var(--mc-font-display);font-size:15px;color:var(--mc-gray-400);margin-bottom:4px;">' +
-            route.tagline +
-            "</p>" +
-            '<div class="mc-quiz-result-stats">' +
-            '<div class="mc-quiz-result-stat"><div class="mc-quiz-result-stat-value">' +
-            route.miles +
-            '</div><div class="mc-quiz-result-stat-label">Miles</div></div>' +
-            '<div class="mc-quiz-result-stat"><div class="mc-quiz-result-stat-value">' +
-            route.climbing +
-            '</div><div class="mc-quiz-result-stat-label">Climbing</div></div>' +
-            '<div class="mc-quiz-result-stat"><div class="mc-quiz-result-stat-value">' +
-            route.time +
-            '</div><div class="mc-quiz-result-stat-label">Est. Time</div></div>' +
-            "</div>" +
-            '<p class="mc-quiz-result-desc">' +
-            route.desc +
-            "</p>" +
-            '<a href="' +
-            buildUTM(REDPODIUM_BASE, key) +
-            '" class="mc-quiz-register-btn" onclick="mcQuizTrackClick(\'register\')">&#x1F6B4; Register for the ' +
-            route.name +
-            "</a>" +
-            '<a href="' +
-            buildUTM(MC_BASE, key) +
-            '" class="mc-quiz-learn-more-btn" target="_blank" onclick="mcQuizTrackClick(\'learn_more\')">&#x1F30A; Learn more at MarinCentury.com</a>' +
-            '<div style="margin-top:20px;">' +
-            '<div class="mc-quiz-retake" onclick="mcQuizRetake()">&#x21BB; Retake quiz</div>' +
-            "</div>" +
-            "</div>";
-
-          document.getElementById("mcQuizResult").innerHTML = html;
-          // Re-trigger animation
-          var resultScreen = document.querySelector('[data-q="result"]');
-          resultScreen.style.animation = "none";
-          void resultScreen.offsetWidth;
-          resultScreen.style.animation = "";
-        };
-
-        window.mcQuizRetake = function () {
-          answers = {};
-          currentQ = 1;
-          // Reset all selections
-          document.querySelectorAll(".mc-quiz-option").forEach(function (opt) {
-            opt.classList.remove("mc-selected");
-          });
-          showScreen(1);
-          updateProgress();
-        };
-
-        function showScreen(q) {
-          document.querySelectorAll(".mc-quiz-screen").forEach(function (s) {
-            s.classList.remove("mc-active");
-            s.style.animation = "none";
-          });
-          var target = document.querySelector('[data-q="' + q + '"]');
-          if (target) {
-            void target.offsetWidth; // force reflow for animation
-            target.style.animation = "";
-            target.classList.add("mc-active");
-          }
-        }
-
-        function updateProgress() {
-          var pct = ((currentQ - 1) / totalQ) * 100;
-          document.getElementById("mcQuizProgress").style.width = pct + "%";
-        }
-      })();
+        gtag("config", "G-D8T7SPST03");
     </script>
-  </body>
+    <!-- Persist UTM tags-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var params = new URLSearchParams(window.location.search);
+            var utmKeys = [
+                "utm_source",
+                "utm_medium",
+                "utm_campaign",
+                "utm_content",
+                "utm_term",
+            ];
+            var utmString = "";
+            utmKeys.forEach(function (key) {
+                if (params.get(key)) {
+                    utmString +=
+                        "&" + key + "=" + encodeURIComponent(params.get(key));
+                }
+            });
+            if (utmString) {
+                document
+                    .querySelectorAll('a[href*="redpodium"]')
+                    .forEach(function (link) {
+                        var href = link.href;
+                        link.href =
+                            href +
+                            (href.indexOf("?") > -1 ? "" : "?") +
+                            utmString;
+                    });
+            }
+        });
+    </script>
+    <body>
+        <header>
+            <div id="header__notices">
+                Marin Century 2026 is on August 1st! &rarr;
+            </div>
+            <div id="header__main">
+                <div id="header__mobile-menu">
+                    <div id="header__logo-mobile">
+                        <img
+                            id="header__image"
+                            src="/img/marin_century_stacked.png"
+                        />
+                    </div>
+
+                    <input
+                        type="checkbox"
+                        name="menu-toggle"
+                        id="menu-toggle"
+                    />
+
+                    <label for="menu-toggle" id="menu-toggle-label">
+                        <svg
+                            id="show-menu-icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 17h-12v-2h12v2zm0-4h-12v-2h12v2zm0-4h-12v-2h12v2z"
+                            />
+                        </svg>
+                        <svg
+                            id="hide-menu-icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.151 17.943l-4.143-4.102-4.117 4.159-1.833-1.833 4.104-4.157-4.162-4.119 1.833-1.833 4.155 4.102 4.106-4.16 1.849 1.849-4.1 4.141 4.157 4.104-1.849 1.849z"
+                            />
+                        </svg>
+                    </label>
+
+                    <nav id="header__mobile-nav">
+                        <ul id="header__mobile-nav-list">
+                            <li><a href="/#routes">Routes</a></li>
+                            <li><a href="/#details">Details</a></li>
+                            <li><a href="/#volunteering">Volunteering</a></li>
+                            <li><a href="/#sponsors">Sponsors</a></li>
+                            <li><a href="/#accomodations">Accomodations</a></li>
+                            <li>
+                                <a href="/#merch" class="highlight"
+                                    >Merchandise</a
+                                >
+                            </li>
+                            <li><a href="/#faq">FAQ</a></li>
+                            <li>
+                                <a
+                                    href="https://marincentury.redpodium.com/2026-marin-century"
+                                    >Register</a
+                                >
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div id="header__desktop-menu">
+                    <nav id="header__desktop-nav">
+                        <ul id="header__nav-left" class="header__nav-list">
+                            <li><a href="/#routes">Routes</a></li>
+                            <li><a href="/#details">Details</a></li>
+                            <li><a href="/#volunteering">Volunteering</a></li>
+                            <li><a href="/#sponsors">Sponsors</a></li>
+                        </ul>
+                        <div id="header__logo">
+                            <img
+                                width="200"
+                                id="header__image"
+                                src="/img/marin_century_stacked.png"
+                            />
+                        </div>
+                        <ul id="header__nav-right" class="header__nav-list">
+                            <li><a href="/#accomodations">Accomodations</a></li>
+                            <li>
+                                <a href="/#merch" class="highlight"
+                                    >Merchandise</a
+                                >
+                            </li>
+                            <li><a href="/#faq">FAQ</a></li>
+                            <li>
+                                <a
+                                    href="https://marincentury.redpodium.com/2026-marin-century"
+                                    >Register</a
+                                >
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <section class="section">
+            <div class="quiz-container">
+                {% block content %}
+
+                <div class="mc-quiz" id="mcRouteQuiz">
+                    <!-- HEADER -->
+                    <div class="mc-quiz-header">
+                        <div class="mc-quiz-icon">&#x1F6B4;</div>
+                        <div class="mc-quiz-title">
+                            Find Your Marin Century Match
+                        </div>
+                        <div class="mc-quiz-subtitle">
+                            4 quick questions. Zero judgment. One great route
+                            (or a heroic volunteer shift).
+                        </div>
+                    </div>
+
+                    <!-- PROGRESS -->
+                    <div class="mc-quiz-progress">
+                        <div
+                            class="mc-quiz-progress-fill"
+                            id="mcQuizProgress"
+                        ></div>
+                    </div>
+
+                    <!-- BODY -->
+                    <div class="mc-quiz-body">
+                        <!-- Q1: DISTANCE -->
+                        <div class="mc-quiz-screen mc-active" data-q="1">
+                            <div class="mc-quiz-step">Question 1 of 4</div>
+                            <div class="mc-quiz-question">
+                                Longest ride in a single day?
+                            </div>
+                            <div class="mc-quiz-hint">
+                                Be honest — we won't check your Strava. Think
+                                single-day glory, not your combined weekly
+                                grocery runs.
+                            </div>
+                            <div class="mc-quiz-options">
+                                <div
+                                    class="mc-quiz-option"
+                                    data-value="5"
+                                    onclick="mcQuizSelect(this)"
+                                >
+                                    <div class="mc-quiz-option-icon">
+                                        &#x1F366;
+                                    </div>
+                                    <div class="mc-quiz-option-text">
+                                        <div class="mc-quiz-option-label">
+                                            Does walking to the gelato stand
+                                            count?
+                                        </div>
+                                        <div class="mc-quiz-option-desc">
+                                            I'm here for the vibes, not the
+                                            odometer.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="mc-quiz-option"
+                                    data-value="1"
+                                    onclick="mcQuizSelect(this)"
+                                >
+                                    <div class="mc-quiz-option-icon">
+                                        &#x1F331;
+                                    </div>
+                                    <div class="mc-quiz-option-text">
+                                        <div class="mc-quiz-option-label">
+                                            I'm here for a good time, not a long
+                                            time
+                                        </div>
+                                        <div class="mc-quiz-option-desc">
+                                            Still building up my distance.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="mc-quiz-option"
+                                    data-value="2"
+                                    onclick="mcQuizSelect(this)"
+                                >
+                                    <div class="mc-quiz-option-icon">
+                                        &#x1F333;
+                                    </div>
+                                    <div class="mc-quiz-option-text">
+                                        <div class="mc-quiz-option-label">
+                                            The Half-Way Hero
+                                        </div>
+                                        <div class="mc-quiz-option-desc">
+                                            Comfortable with half-century vibes.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="mc-quiz-option"
+                                    data-value="3"
+                                    onclick="mcQuizSelect(this)"
+                                >
+                                    <div class="mc-quiz-option-icon">
+                                        &#x26F0;&#xFE0F;
+                                    </div>
+                                    <div class="mc-quiz-option-text">
+                                        <div class="mc-quiz-option-label">
+                                            Century-Curious
+                                        </div>
+                                        <div class="mc-quiz-option-desc">
+                                            I've conquered a metric and lived to
+                                            tell the tale.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="mc-quiz-option"
+                                    data-value="4"
+                                    onclick="mcQuizSelect(this)"
+                                >
+                                    <div class="mc-quiz-option-icon">
+                                        &#x1F451;
+                                    </div>
+                                    <div class="mc-quiz-option-text">
+                                        <div class="mc-quiz-option-label">
+                                            My bike seat is my throne
+                                        </div>
+                                        <div class="mc-quiz-option-desc">
+                                            I eat centuries for breakfast.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mc-quiz-nav">
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+
+                        <!-- Q2: ELEVATION -->
+                        <div class="mc-quiz-screen" data-q="2">
+                            <div class="mc-quiz-step">Question 2 of 4</div>
+                            <div class="mc-quiz-question">
+                                How do you feel about gravity?
+                            </div>
+                            <div class="mc-quiz-hint">
+                                Marin is beautiful, but some of that beauty is
+                                tilted at a 10% grade.
+                            </div>
+                            <div class="mc-quiz-options">
+                                <div
+                                    class="mc-quiz-option"
+                                    data-value="5"
+                                    onclick="mcQuizSelect(this)"
+                                >
+                                    <div class="mc-quiz-option-icon">
+                                        &#x1F6B6;
+                                    </div>
+                                    <div class="mc-quiz-option-text">
+                                        <div class="mc-quiz-option-label">
+                                            My favorite grade is 0%
+                                        </div>
+                                        <div class="mc-quiz-option-desc">
+                                            Climbing is not in my vocabulary.
+                                            Stafford Lake is just fine.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="mc-quiz-option"
+                                    data-value="1"
+                                    onclick="mcQuizSelect(this)"
+                                >
+                                    <div class="mc-quiz-option-icon">
+                                        &#x1F60C;
+                                    </div>
+                                    <div class="mc-quiz-option-text">
+                                        <div class="mc-quiz-option-label">
+                                            Keep it manageable
+                                        </div>
+                                        <div class="mc-quiz-option-desc">
+                                            Rolling hills: yes. Suffering: no.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="mc-quiz-option"
+                                    data-value="2"
+                                    onclick="mcQuizSelect(this)"
+                                >
+                                    <div class="mc-quiz-option-icon">
+                                        &#x1F4AA;
+                                    </div>
+                                    <div class="mc-quiz-option-text">
+                                        <div class="mc-quiz-option-label">
+                                            I can handle some serious hills
+                                        </div>
+                                        <div class="mc-quiz-option-desc">
+                                            4,000–7,000 ft? I can work with
+                                            that.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="mc-quiz-option"
+                                    data-value="3"
+                                    onclick="mcQuizSelect(this)"
+                                >
+                                    <div class="mc-quiz-option-icon">
+                                        &#x1F3D4;&#xFE0F;
+                                    </div>
+                                    <div class="mc-quiz-option-text">
+                                        <div class="mc-quiz-option-label">
+                                            The steeper the better
+                                        </div>
+                                        <div class="mc-quiz-option-desc">
+                                            Mt. Tam energy. Iconic climbs,
+                                            please.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="mc-quiz-option"
+                                    data-value="4"
+                                    onclick="mcQuizSelect(this)"
+                                >
+                                    <div class="mc-quiz-option-icon">
+                                        &#x1F929;
+                                    </div>
+                                    <div class="mc-quiz-option-text">
+                                        <div class="mc-quiz-option-label">
+                                            I want an epic challenge
+                                        </div>
+                                        <div class="mc-quiz-option-desc">
+                                            10,000+ ft sounds… honestly
+                                            delightful.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mc-quiz-nav">
+                                <button
+                                    type="button"
+                                    class="mc-quiz-btn mc-quiz-btn-back"
+                                    onclick="mcQuizBack()"
+                                >
+                                    <svg viewBox="0 0 24 24">
+                                        <polyline points="15 18 9 12 15 6" />
+                                    </svg>
+                                    Back
+                                </button>
+                                <div></div>
+                            </div>
+                        </div>
+
+                        <!-- Q3: GOALS -->
+                        <div class="mc-quiz-screen" data-q="3">
+                            <div class="mc-quiz-step">Question 3 of 4</div>
+                            <div class="mc-quiz-question">
+                                What does victory look like to you?
+                            </div>
+                            <div class="mc-quiz-hint">
+                                Aside from the post-ride gelato and beer, of
+                                course.
+                            </div>
+                            <div class="mc-quiz-options">
+                                <div
+                                    class="mc-quiz-option"
+                                    data-value="5"
+                                    onclick="mcQuizSelect(this)"
+                                >
+                                    <div class="mc-quiz-option-icon">
+                                        &#x1F973;
+                                    </div>
+                                    <div class="mc-quiz-option-text">
+                                        <div class="mc-quiz-option-label">
+                                            The Hero Behind the Scenes
+                                        </div>
+                                        <div class="mc-quiz-option-desc">
+                                            I'd rather hand out the snacks than
+                                            desperately need them.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="mc-quiz-option"
+                                    data-value="1"
+                                    onclick="mcQuizSelect(this)"
+                                >
+                                    <div class="mc-quiz-option-icon">
+                                        &#x1F305;
+                                    </div>
+                                    <div class="mc-quiz-option-text">
+                                        <div class="mc-quiz-option-label">
+                                            Professional Sightseer
+                                        </div>
+                                        <div class="mc-quiz-option-desc">
+                                            I'm here for the views, the vibes,
+                                            and the rest stops.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="mc-quiz-option"
+                                    data-value="2"
+                                    onclick="mcQuizSelect(this)"
+                                >
+                                    <div class="mc-quiz-option-icon">
+                                        &#x1F3AF;
+                                    </div>
+                                    <div class="mc-quiz-option-text">
+                                        <div class="mc-quiz-option-label">
+                                            Hit a personal milestone
+                                        </div>
+                                        <div class="mc-quiz-option-desc">
+                                            First metric/century… or a PR that
+                                            makes Strava nervous.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="mc-quiz-option"
+                                    data-value="3"
+                                    onclick="mcQuizSelect(this)"
+                                >
+                                    <div class="mc-quiz-option-icon">
+                                        &#x1F3C6;
+                                    </div>
+                                    <div class="mc-quiz-option-text">
+                                        <div class="mc-quiz-option-label">
+                                            Type 2 Fun Enthusiast
+                                        </div>
+                                        <div class="mc-quiz-option-desc">
+                                            I want to suffer a little now so I
+                                            can brag a lot later.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="mc-quiz-option"
+                                    data-value="4"
+                                    onclick="mcQuizSelect(this)"
+                                >
+                                    <div class="mc-quiz-option-icon">
+                                        &#x1F30B;
+                                    </div>
+                                    <div class="mc-quiz-option-text">
+                                        <div class="mc-quiz-option-label">
+                                            Local Legend Status
+                                        </div>
+                                        <div class="mc-quiz-option-desc">
+                                            An all-day endurance feat I'll
+                                            remember forever.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mc-quiz-nav">
+                                <button
+                                    type="button"
+                                    class="mc-quiz-btn mc-quiz-btn-back"
+                                    onclick="mcQuizBack()"
+                                >
+                                    <svg viewBox="0 0 24 24">
+                                        <polyline points="15 18 9 12 15 6" />
+                                    </svg>
+                                    Back
+                                </button>
+                                <div></div>
+                            </div>
+                        </div>
+
+                        <!-- Q4: THE CLOCK -->
+                        <div class="mc-quiz-screen" data-q="4">
+                            <div class="mc-quiz-step">Question 4 of 4</div>
+                            <div class="mc-quiz-question">
+                                How much "quality time" do you want with your
+                                bike?
+                            </div>
+                            <div class="mc-quiz-hint">
+                                Remember: the faster you ride, the sooner the
+                                party starts.
+                            </div>
+                            <div class="mc-quiz-options">
+                                <div
+                                    class="mc-quiz-option"
+                                    data-value="5"
+                                    onclick="mcQuizSelect(this)"
+                                >
+                                    <div class="mc-quiz-option-icon">
+                                        &#x1F37B;
+                                    </div>
+                                    <div class="mc-quiz-option-text">
+                                        <div class="mc-quiz-option-label">
+                                            The All-Party, No-Pedaling Plan
+                                        </div>
+                                        <div class="mc-quiz-option-desc">
+                                            Food, beer, music… and maybe a
+                                            heroic volunteer shift.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="mc-quiz-option"
+                                    data-value="1"
+                                    onclick="mcQuizSelect(this)"
+                                >
+                                    <div class="mc-quiz-option-icon">
+                                        &#x23F0;
+                                    </div>
+                                    <div class="mc-quiz-option-text">
+                                        <div class="mc-quiz-option-label">
+                                            The Sprinter
+                                        </div>
+                                        <div class="mc-quiz-option-desc">
+                                            Quick rip, then straight to the
+                                            party.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="mc-quiz-option"
+                                    data-value="2"
+                                    onclick="mcQuizSelect(this)"
+                                >
+                                    <div class="mc-quiz-option-icon">
+                                        &#x2600;&#xFE0F;
+                                    </div>
+                                    <div class="mc-quiz-option-text">
+                                        <div class="mc-quiz-option-label">
+                                            The Explorer
+                                        </div>
+                                        <div class="mc-quiz-option-desc">
+                                            Half-day ride, maximum snack
+                                            strategy.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="mc-quiz-option"
+                                    data-value="3"
+                                    onclick="mcQuizSelect(this)"
+                                >
+                                    <div class="mc-quiz-option-icon">
+                                        &#x1F31E;
+                                    </div>
+                                    <div class="mc-quiz-option-text">
+                                        <div class="mc-quiz-option-label">
+                                            The Overachiever
+                                        </div>
+                                        <div class="mc-quiz-option-desc">
+                                            Full day. Full experience. Full
+                                            pockets of gummy bears.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="mc-quiz-option"
+                                    data-value="4"
+                                    onclick="mcQuizSelect(this)"
+                                >
+                                    <div class="mc-quiz-option-icon">
+                                        &#x1F303;
+                                    </div>
+                                    <div class="mc-quiz-option-text">
+                                        <div class="mc-quiz-option-label">
+                                            The Sun-Seeker
+                                        </div>
+                                        <div class="mc-quiz-option-desc">
+                                            All-day epic. I live for this
+                                            (apparently).
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mc-quiz-nav">
+                                <button
+                                    type="button"
+                                    class="mc-quiz-btn mc-quiz-btn-back"
+                                    onclick="mcQuizBack()"
+                                >
+                                    <svg viewBox="0 0 24 24">
+                                        <polyline points="15 18 9 12 15 6" />
+                                    </svg>
+                                    Back
+                                </button>
+                                <div></div>
+                            </div>
+                        </div>
+
+                        <!-- RESULT -->
+                        <div
+                            class="mc-quiz-screen"
+                            data-q="result"
+                            id="mcQuizResult"
+                        ></div>
+                    </div>
+                </div>
+
+                {% endblock content %}
+            </div>
+        </section>
+        <footer>
+            <div class="page-column">
+                <div class="site-column">
+                    <div id="footer-links">
+                        <a
+                            href="https://marincentury.redpodium.com/2026-marin-century"
+                            >Register</a
+                        >
+                        <a href="mailto:centuryregistration@marincyclists.com"
+                            >Contact Us</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script>
+            (function () {
+                // --- GOOGLE APPS SCRIPT LOGGING ---
+                // Replace this URL with your deployed Apps Script web app URL
+                var APPS_SCRIPT_URL =
+                    "https://script.google.com/macros/s/AKfycbzPTLiiixYxzCnV1jiPHHW4Ta-4hzAe0xhxouMp8ObG4xyRzW9ZwzUhhi6o8LpVLNVa0A/exec";
+
+                function logQuizResult(answers, routeKey, matchPct) {
+                    if (
+                        APPS_SCRIPT_URL ===
+                        "https://script.google.com/macros/s/AKfycbzPTLiiixYxzCnV1jiPHHW4Ta-4hzAe0xhxouMp8ObG4xyRzW9ZwzUhhi6o8LpVLNVa0A/exec"
+                    )
+                        return;
+                    var route = routes[routeKey];
+                    var payload = {
+                        timestamp: new Date().toISOString(),
+                        q1_longest_ride: answers[1] || "",
+                        q2_climbing: answers[2] || "",
+                        q3_goal: answers[3] || "",
+                        q4_time: answers[4] || "",
+                        recommended_route: route.name,
+                        match_pct: matchPct,
+                    };
+                    try {
+                        fetch(APPS_SCRIPT_URL, {
+                            method: "POST",
+                            mode: "no-cors",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify(payload),
+                        });
+                    } catch (e) {
+                        /* fail silently */
+                    }
+                }
+
+                // Log a follow-up action (rating, button click) as an update
+                function logAction(actionType, actionValue) {
+                    if (APPS_SCRIPT_URL === "YOUR_APPS_SCRIPT_URL_HERE") return;
+                    try {
+                        fetch(APPS_SCRIPT_URL, {
+                            method: "POST",
+                            mode: "no-cors",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({
+                                timestamp: new Date().toISOString(),
+                                action_type: actionType,
+                                action_value: actionValue,
+                            }),
+                        });
+                    } catch (e) {
+                        /* fail silently */
+                    }
+                }
+
+                // Star rating handler
+                var quizRating = 0;
+                window.mcQuizRate = function (stars) {
+                    quizRating = stars;
+                    // Update star visuals
+                    document
+                        .querySelectorAll(".mc-quiz-star")
+                        .forEach(function (el, i) {
+                            if (i < stars) {
+                                el.classList.add("mc-star-active");
+                            } else {
+                                el.classList.remove("mc-star-active");
+                            }
+                        });
+                    logAction("rating", stars);
+                };
+
+                // Button click tracker
+                window.mcQuizTrackClick = function (buttonName) {
+                    logAction("button_click", buttonName);
+                };
+
+                // --- UTM TRACKING ---
+                var REDPODIUM_BASE =
+                    "https://marincentury.redpodium.com/2026-marin-century";
+                var MC_BASE = "https://marincentury.com";
+
+                function buildUTM(baseUrl, content) {
+                    var sep = baseUrl.indexOf("?") === -1 ? "?" : "&";
+                    return (
+                        baseUrl +
+                        sep +
+                        "utm_source=quiz" +
+                        "&utm_medium=referral" +
+                        "&utm_campaign=route-quiz" +
+                        "&utm_content=" +
+                        encodeURIComponent(content)
+                    );
+                }
+
+                // --- ROUTE DATA ---
+                var routes = {
+                    geronimo: {
+                        name: "Geronimo",
+                        miles: "37",
+                        climbing: "2,269 ft",
+                        price: "$80",
+                        time: "3–4 hrs",
+                        difficulty: "Beginner-Friendly",
+                        diffClass: "easy",
+                        desc: "Ride through the beautiful San Geronimo Valley and past Nicasio Reservoir, under the towering redwoods of Samuel P. Taylor State Park. One fully stocked rest stop with live music, plus two water stops. The perfect introduction to the Marin Century experience.",
+                        tagline: "Beautiful scenery, totally achievable",
+                    },
+                    metric: {
+                        name: "Metric Century",
+                        miles: "64",
+                        climbing: "4,309 ft",
+                        price: "$100",
+                        time: "4–6 hrs",
+                        difficulty: "Moderate",
+                        diffClass: "moderate",
+                        desc: "Our most popular route. Travel through West Marin, past Nicasio Reservoir and along the scenic shores of Tomales Bay on Highway 1 to the country town of Tomales. Multiple well-stocked rest stops with live music at every one.",
+                        tagline: "The fan favorite — scenic and satisfying",
+                    },
+                    century: {
+                        name: "Century",
+                        miles: "100",
+                        climbing: "6,606 ft",
+                        price: "$110",
+                        time: "6–9 hrs",
+                        difficulty: "Challenging",
+                        diffClass: "challenging",
+                        desc: "The classic hundred-miler. Tomales Bay views, rolling Chileno Valley Road, challenging Wilson Hill, plus bonus loops through the redwoods and the edges of Petaluma. A memorable, iconic day whether it's your first century or your fiftieth.",
+                        tagline:
+                            "The iconic hundred — a day you'll never forget",
+                    },
+                    tam: {
+                        name: "Mount Tam",
+                        miles: "92",
+                        climbing: "8,931 ft",
+                        price: "$120",
+                        time: "7–10 hrs",
+                        difficulty: "Very Challenging",
+                        diffClass: "challenging",
+                        desc: "For experienced climbers who want the legendary Mt. Tamalpais ascent. Breathtaking summit views, one of the best descents in the Bay Area, and the satisfaction of conquering a Marin County icon. Serious climbing, serious reward.",
+                        tagline: "Conquer the mountain, earn the views",
+                    },
+                    double: {
+                        name: "Double Metric",
+                        miles: "127",
+                        climbing: "11,079 ft",
+                        price: "$140",
+                        time: "9–13 hrs",
+                        difficulty: "Epic Endurance",
+                        diffClass: "epic",
+                        desc: "The ultimate challenge. Combines the best of West Marin with the Mt. Tam climb — 127 miles and over 11,000 feet of elevation gain. Strict time cutoffs apply. For experienced endurance riders who want to push their absolute limits.",
+                        tagline: "The ultimate test — for those who dare",
+                    },
+                    volunteer: {
+                        name: "Volunteer Crew",
+                        miles: "0",
+                        climbing: "0 ft",
+                        price: "Free",
+                        time: "~4 hrs",
+                        difficulty: "You cracked the code",
+                        diffClass: "volunteer",
+                        desc: "While everyone else is battling gravity and reconsidering their life choices on a 10% grade, you'll be the one making the magic happen for 2,500 of your closest cycling friends.",
+                        tagline: "The real MVPs of the Marin Century",
+                    },
+                };
+
+                var diffColors = {
+                    easy: { bg: "#E6F4EA", color: "#1B7340" },
+                    moderate: { bg: "#FFF3E0", color: "#C66900" },
+                    challenging: { bg: "#FCE4EC", color: "#B71C1C" },
+                    epic: { bg: "#F3E5F5", color: "#7B1FA2" },
+                    volunteer: { bg: "#FFF8E1", color: "#E6A817" },
+                };
+
+                // --- SCORING MATRIX ---
+                // Each answer adds points to [geronimo, metric, century, tam, double]
+                var scoring = {
+                    1: {
+                        // Q1: Longest ride
+                        1: [5, 2, 0, 0, 0],
+                        2: [3, 5, 2, 1, 0],
+                        3: [0, 3, 5, 4, 2],
+                        4: [0, 1, 4, 4, 5],
+                    },
+                    2: {
+                        // Q2: Climbing
+                        1: [5, 3, 1, 0, 0],
+                        2: [1, 4, 5, 2, 1],
+                        3: [0, 1, 3, 5, 3],
+                        4: [0, 0, 2, 4, 5],
+                    },
+                    3: {
+                        // Q3: Goal
+                        1: [5, 4, 2, 1, 0],
+                        2: [2, 5, 4, 2, 1],
+                        3: [0, 2, 4, 5, 3],
+                        4: [0, 0, 2, 3, 5],
+                    },
+                    4: {
+                        // Q4: Time
+                        1: [5, 1, 0, 0, 0],
+                        2: [2, 5, 2, 1, 0],
+                        3: [0, 2, 5, 4, 2],
+                        4: [0, 0, 3, 3, 5],
+                    },
+                };
+
+                var answers = {};
+                var currentQ = 1;
+                var totalQ = 4;
+
+                // --- QUIZ INTERACTION ---
+                window.mcQuizSelect = function (el) {
+                    var screen = el.closest(".mc-quiz-screen");
+                    var qNum = parseInt(screen.getAttribute("data-q"));
+                    // Deselect siblings
+                    screen
+                        .querySelectorAll(".mc-quiz-option")
+                        .forEach(function (opt) {
+                            opt.classList.remove("mc-selected");
+                        });
+                    el.classList.add("mc-selected");
+                    answers[qNum] = parseInt(el.getAttribute("data-value"));
+
+                    // Auto-advance after brief pause for visual feedback
+                    setTimeout(function () {
+                        if (qNum < totalQ) {
+                            currentQ = qNum + 1;
+                            showScreen(currentQ);
+                            updateProgress();
+                        } else {
+                            // Last question — show result
+                            mcQuizShowResult();
+                        }
+                    }, 400);
+                };
+
+                window.mcQuizBack = function () {
+                    if (currentQ <= 1) return;
+                    currentQ--;
+                    showScreen(currentQ);
+                    updateProgress();
+                };
+
+                window.mcQuizShowResult = function () {
+                    var winnerKey, matchPct;
+
+                    // --- VOLUNTEER SHORT-CIRCUIT ---
+                    // Any "volunteer" answer (value 5) on any question triggers volunteer result
+                    if (
+                        answers[1] === 5 ||
+                        answers[2] === 5 ||
+                        answers[3] === 5 ||
+                        answers[4] === 5
+                    ) {
+                        winnerKey = "volunteer";
+                        matchPct = 100;
+                        var route = routes[winnerKey];
+                        var dc = diffColors[route.diffClass];
+
+                        var html =
+                            '<div class="mc-quiz-result">' +
+                            '<div class="mc-quiz-result-badge" style="background:' +
+                            dc.bg +
+                            ";color:" +
+                            dc.color +
+                            ';">' +
+                            route.difficulty +
+                            "</div>" +
+                            '<div class="mc-quiz-result-name">You got: ' +
+                            route.name +
+                            "</div>" +
+                            '<p style="font-family:var(--mc-font-display);font-size:15px;color:var(--mc-gray-400);margin-bottom:4px;">' +
+                            route.tagline +
+                            "</p>" +
+                            '<div class="mc-quiz-result-match">&#x2705; ' +
+                            matchPct +
+                            "% match for you</div>" +
+                            '<p class="mc-quiz-result-desc">' +
+                            route.desc +
+                            "</p>" +
+                            '<div class="mc-quiz-vol-perks">' +
+                            '<div class="mc-quiz-vol-perks-title">Why You\'re Our MVP:</div>' +
+                            '<div class="mc-quiz-vol-perk">' +
+                            '<div class="mc-quiz-vol-perk-icon">&#x1F39F;&#xFE0F;</div>' +
+                            '<div class="mc-quiz-vol-perk-text"><strong>The "All-Access" Pass:</strong> You get the legendary rest-stop snacks and the finish-line food, music, and party — without the 4,000-calorie debt.</div>' +
+                            "</div>" +
+                            '<div class="mc-quiz-vol-perk">' +
+                            '<div class="mc-quiz-vol-perk-icon">&#x1F60E;</div>' +
+                            '<div class="mc-quiz-vol-perk-text"><strong>Lycra Optional:</strong> You get to look cool and stay comfortable. No chamois cream required.</div>' +
+                            "</div>" +
+                            '<div class="mc-quiz-vol-perk">' +
+                            '<div class="mc-quiz-vol-perk-icon">&#x1F64F;</div>' +
+                            '<div class="mc-quiz-vol-perk-text"><strong>Maximum Appreciation:</strong> You\'ll receive approximately 1,000 "thank yous" from very tired, very grateful strangers.</div>' +
+                            "</div>" +
+                            "</div>" +
+                            '<div class="mc-quiz-rating">' +
+                            '<div class="mc-quiz-rating-label">Rate this quiz</div>' +
+                            '<div class="mc-quiz-stars">' +
+                            '<span class="mc-quiz-star" onclick="mcQuizRate(1)">&#x2B50;</span>' +
+                            '<span class="mc-quiz-star" onclick="mcQuizRate(2)">&#x2B50;</span>' +
+                            '<span class="mc-quiz-star" onclick="mcQuizRate(3)">&#x2B50;</span>' +
+                            '<span class="mc-quiz-star" onclick="mcQuizRate(4)">&#x2B50;</span>' +
+                            '<span class="mc-quiz-star" onclick="mcQuizRate(5)">&#x2B50;</span>' +
+                            "</div>" +
+                            "</div>" +
+                            '<a href="mailto:Volunteers@MarinCentury.com?subject=' +
+                            encodeURIComponent(
+                                "I'm interested in Volunteering at the best Cycling event",
+                            ) +
+                            '" class="mc-quiz-register-btn" style="background:var(--mc-gold);box-shadow:0 4px 16px rgba(229,168,23,0.3);" onclick="mcQuizTrackClick(\'volunteer_email\')">&#x1F64C; Volunteer for the Marin Century</a>' +
+                            '<a href="' +
+                            buildUTM(MC_BASE, "volunteer") +
+                            '" class="mc-quiz-learn-more-btn" target="_blank" onclick="mcQuizTrackClick(\'learn_more\')">&#x1F30A; Learn more at MarinCentury.com</a>' +
+                            '<div class="mc-quiz-retake" onclick="mcQuizRetake()">&#x21BB; Retake quiz</div>' +
+                            "</div>";
+
+                        document.getElementById("mcQuizResult").innerHTML =
+                            html;
+                        logQuizResult(answers, winnerKey, matchPct);
+                        showScreen("result");
+                        document.getElementById("mcQuizProgress").style.width =
+                            "100%";
+                        return;
+                    }
+
+                    // --- NORMAL SCORING ---
+                    var routeKeys = [
+                        "geronimo",
+                        "metric",
+                        "century",
+                        "tam",
+                        "double",
+                    ];
+                    var scores = [0, 0, 0, 0, 0];
+
+                    for (var q = 1; q <= totalQ; q++) {
+                        var val = answers[q];
+                        if (val && scoring[q] && scoring[q][val]) {
+                            var pts = scoring[q][val];
+                            for (var i = 0; i < 5; i++) {
+                                scores[i] += pts[i];
+                            }
+                        }
+                    }
+
+                    // Experience guard: Under 30 mi or 30-60 mi cannot be matched to Mt Tam or Double Metric
+                    if (answers[1] === 1 || answers[1] === 2) {
+                        scores[3] = 0; // tam
+                        scores[4] = 0; // double
+                    }
+
+                    // Find winner
+                    var maxScore = Math.max.apply(null, scores);
+                    var winnerIdx = scores.indexOf(maxScore);
+                    winnerKey = routeKeys[winnerIdx];
+                    var route = routes[winnerKey];
+                    var dc = diffColors[route.diffClass];
+
+                    // Get match percentage (normalize to 80-99 range)
+                    var totalPossible = totalQ * 5;
+                    matchPct = Math.round(
+                        80 + (scores[winnerIdx] / totalPossible) * 19,
+                    );
+
+                    // Get runner-up routes
+                    var ranked = routeKeys
+                        .map(function (key, i) {
+                            return { key: key, score: scores[i] };
+                        })
+                        .sort(function (a, b) {
+                            return b.score - a.score;
+                        });
+                    var alts = ranked
+                        .filter(function (r) {
+                            return r.key !== winnerKey;
+                        })
+                        .slice(0, 2);
+
+                    // Build result HTML
+                    var html =
+                        '<div class="mc-quiz-result">' +
+                        '<div class="mc-quiz-result-badge" style="background:' +
+                        dc.bg +
+                        ";color:" +
+                        dc.color +
+                        ';">' +
+                        route.difficulty +
+                        "</div>" +
+                        '<div class="mc-quiz-result-name">' +
+                        route.name +
+                        "</div>" +
+                        '<p style="font-family:var(--mc-font-display);font-size:15px;color:var(--mc-gray-400);margin-bottom:4px;">' +
+                        route.tagline +
+                        "</p>" +
+                        '<div class="mc-quiz-result-stats">' +
+                        '<div class="mc-quiz-result-stat"><div class="mc-quiz-result-stat-value">' +
+                        route.miles +
+                        '</div><div class="mc-quiz-result-stat-label">Miles</div></div>' +
+                        '<div class="mc-quiz-result-stat"><div class="mc-quiz-result-stat-value">' +
+                        route.climbing +
+                        '</div><div class="mc-quiz-result-stat-label">Climbing</div></div>' +
+                        '<div class="mc-quiz-result-stat"><div class="mc-quiz-result-stat-value">' +
+                        route.time +
+                        '</div><div class="mc-quiz-result-stat-label">Est. Time</div></div>' +
+                        "</div>" +
+                        '<div class="mc-quiz-result-match">&#x2705; ' +
+                        matchPct +
+                        "% match for you</div>" +
+                        '<p class="mc-quiz-result-desc">' +
+                        route.desc +
+                        "</p>" +
+                        '<div class="mc-quiz-rating">' +
+                        '<div class="mc-quiz-rating-label">Rate this quiz</div>' +
+                        '<div class="mc-quiz-stars">' +
+                        '<span class="mc-quiz-star" onclick="mcQuizRate(1)">&#x2B50;</span>' +
+                        '<span class="mc-quiz-star" onclick="mcQuizRate(2)">&#x2B50;</span>' +
+                        '<span class="mc-quiz-star" onclick="mcQuizRate(3)">&#x2B50;</span>' +
+                        '<span class="mc-quiz-star" onclick="mcQuizRate(4)">&#x2B50;</span>' +
+                        '<span class="mc-quiz-star" onclick="mcQuizRate(5)">&#x2B50;</span>' +
+                        "</div>" +
+                        "</div>" +
+                        '<a href="' +
+                        buildUTM(REDPODIUM_BASE, winnerKey) +
+                        '" class="mc-quiz-register-btn" onclick="mcQuizTrackClick(\'register\')">&#x1F6B4; Register for the ' +
+                        route.name +
+                        "</a>" +
+                        '<a href="' +
+                        buildUTM(MC_BASE, winnerKey) +
+                        '" class="mc-quiz-learn-more-btn" target="_blank" onclick="mcQuizTrackClick(\'learn_more\')">&#x1F30A; Learn more at MarinCentury.com</a>' +
+                        '<div class="mc-quiz-result-alt">' +
+                        '<div class="mc-quiz-result-alt-label">Also a great fit for you</div>' +
+                        '<div class="mc-quiz-result-alt-routes">' +
+                        alts
+                            .map(function (a) {
+                                var r = routes[a.key];
+                                return (
+                                    '<span class="mc-quiz-alt-chip" onclick="mcQuizShowAlt(\'' +
+                                    a.key +
+                                    "')\">" +
+                                    r.name +
+                                    " (" +
+                                    r.miles +
+                                    " mi)</span>"
+                                );
+                            })
+                            .join("") +
+                        "</div>" +
+                        "</div>" +
+                        '<div class="mc-quiz-retake" onclick="mcQuizRetake()">&#x21BB; Retake quiz</div>' +
+                        "</div>";
+
+                    document.getElementById("mcQuizResult").innerHTML = html;
+                    logQuizResult(answers, winnerKey, matchPct);
+                    showScreen("result");
+                    // Full progress
+                    document.getElementById("mcQuizProgress").style.width =
+                        "100%";
+                };
+
+                window.mcQuizShowAlt = function (key) {
+                    var route = routes[key];
+                    var dc = diffColors[route.diffClass];
+
+                    var html =
+                        '<div class="mc-quiz-result">' +
+                        '<div class="mc-quiz-result-badge" style="background:' +
+                        dc.bg +
+                        ";color:" +
+                        dc.color +
+                        ';">' +
+                        route.difficulty +
+                        "</div>" +
+                        '<div class="mc-quiz-result-name">' +
+                        route.name +
+                        "</div>" +
+                        '<p style="font-family:var(--mc-font-display);font-size:15px;color:var(--mc-gray-400);margin-bottom:4px;">' +
+                        route.tagline +
+                        "</p>" +
+                        '<div class="mc-quiz-result-stats">' +
+                        '<div class="mc-quiz-result-stat"><div class="mc-quiz-result-stat-value">' +
+                        route.miles +
+                        '</div><div class="mc-quiz-result-stat-label">Miles</div></div>' +
+                        '<div class="mc-quiz-result-stat"><div class="mc-quiz-result-stat-value">' +
+                        route.climbing +
+                        '</div><div class="mc-quiz-result-stat-label">Climbing</div></div>' +
+                        '<div class="mc-quiz-result-stat"><div class="mc-quiz-result-stat-value">' +
+                        route.time +
+                        '</div><div class="mc-quiz-result-stat-label">Est. Time</div></div>' +
+                        "</div>" +
+                        '<p class="mc-quiz-result-desc">' +
+                        route.desc +
+                        "</p>" +
+                        '<a href="' +
+                        buildUTM(REDPODIUM_BASE, key) +
+                        '" class="mc-quiz-register-btn" onclick="mcQuizTrackClick(\'register\')">&#x1F6B4; Register for the ' +
+                        route.name +
+                        "</a>" +
+                        '<a href="' +
+                        buildUTM(MC_BASE, key) +
+                        '" class="mc-quiz-learn-more-btn" target="_blank" onclick="mcQuizTrackClick(\'learn_more\')">&#x1F30A; Learn more at MarinCentury.com</a>' +
+                        '<div style="margin-top:20px;">' +
+                        '<div class="mc-quiz-retake" onclick="mcQuizRetake()">&#x21BB; Retake quiz</div>' +
+                        "</div>" +
+                        "</div>";
+
+                    document.getElementById("mcQuizResult").innerHTML = html;
+                    // Re-trigger animation
+                    var resultScreen =
+                        document.querySelector('[data-q="result"]');
+                    resultScreen.style.animation = "none";
+                    void resultScreen.offsetWidth;
+                    resultScreen.style.animation = "";
+                };
+
+                window.mcQuizRetake = function () {
+                    answers = {};
+                    currentQ = 1;
+                    // Reset all selections
+                    document
+                        .querySelectorAll(".mc-quiz-option")
+                        .forEach(function (opt) {
+                            opt.classList.remove("mc-selected");
+                        });
+                    showScreen(1);
+                    updateProgress();
+                };
+
+                function showScreen(q) {
+                    document
+                        .querySelectorAll(".mc-quiz-screen")
+                        .forEach(function (s) {
+                            s.classList.remove("mc-active");
+                            s.style.animation = "none";
+                        });
+                    var target = document.querySelector('[data-q="' + q + '"]');
+                    if (target) {
+                        void target.offsetWidth; // force reflow for animation
+                        target.style.animation = "";
+                        target.classList.add("mc-active");
+                    }
+                }
+
+                function updateProgress() {
+                    var pct = ((currentQ - 1) / totalQ) * 100;
+                    document.getElementById("mcQuizProgress").style.width =
+                        pct + "%";
+                }
+            })();
+        </script>
+    </body>
 </html>

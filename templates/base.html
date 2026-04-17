@@ -1,125 +1,133 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Marin Century</title>
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <head>
+        <meta charset="utf-8" />
+        <title>Marin Century</title>
+        <meta
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <meta property="og:title" content="Marin Century" />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:image"
-      content="https://marincentury.com/img/MC24_ChilenoJerseys.jpg"
-    />
-    <meta property="og:url" content="https://marincentury.com" />
-    <meta
-      property="og:description"
-      content="The Marin Century is one of the premier centuries in Northern California, featuring iconic Bay Area routes and an amazing atmosphere."
-    />
+        <meta property="og:title" content="Marin Century" />
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:image"
+            content="https://marincentury.com/img/MC24_ChilenoJerseys.jpg"
+        />
+        <meta property="og:url" content="https://marincentury.com" />
+        <meta
+            property="og:description"
+            content="The Marin Century is one of the premier centuries in Northern California, featuring iconic Bay Area routes and an amazing atmosphere."
+        />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&family=BBH+Sans+Bogle&family=BBH+Sans+Hegarty&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/style.css" />
-  </head>
-  <!-- Google tag (gtag.js) -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-D8T7SPST03"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "G-D8T7SPST03");
-  </script>
-  <!-- Persist UTM tags-->
-  <script>
-    /**
-     * Marin Century UTM → RedPodium PreFill Passthrough
-     * Captures UTM parameters from marincentury.com URLs and appends them
-     * to RedPodium registration links as a prefill value.
-     *
-     * Example: a visitor arriving at marincentury.com/?utm_source=postcard&utm_medium=print&utm_content=novato-bikeworks&utm_campaign=2026mc
-     * will have registration links rewritten to:
-     * marincentury.redpodium.com/2026-marin-century?source=source:postcard|medium:print|content:novato-bikeworks|campaign:2026mc
-     *
-     * IMPORTANT: Replace 'source' in FIELD_NAME with the exact hidden field
-     * name configured in RedPodium's form builder.
-     */
-
-    (function () {
-      "use strict";
-
-      // ── CONFIGURATION ──────────────────────────────
-      var FIELD_NAME = "source"; // ← CONFIRM THIS MATCHES REDPODIUM FIELD NAME
-      // ───────────────────────────────────────────────
-
-      document.addEventListener("DOMContentLoaded", function () {
-        var params = new URLSearchParams(window.location.search);
-
-        // Build combined source string from available UTM params
-        var parts = [];
-        ["utm_source", "utm_medium", "utm_content", "utm_campaign"].forEach(
-          function (key) {
-            var val = params.get(key);
-            if (val) parts.push(key.replace("utm_", "") + ":" + val);
-          },
-        );
-
-        // No UTM params present — nothing to do
-        if (parts.length === 0) return;
-
-        var sourceValue = parts.join("|");
-
-        function tagLinks(root) {
-          (root || document)
-            .querySelectorAll('a[href*="redpodium"]')
-            .forEach(function (link) {
-              try {
-                var url = new URL(link.href);
-                // Don't overwrite if already tagged
-                if (url.searchParams.has(FIELD_NAME)) return;
-                url.searchParams.set(FIELD_NAME, sourceValue);
-                link.href = url.toString();
-              } catch (e) {
-                // Skip malformed URLs
-              }
-            });
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&family=BBH+Sans+Bogle&family=BBH+Sans+Hegarty&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/style.css" />
+    </head>
+    <!-- Google tag (gtag.js) -->
+    <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-D8T7SPST03"
+    ></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
         }
+        gtag("js", new Date());
 
-        // Tag existing links
-        tagLinks();
+        gtag("config", "G-D8T7SPST03");
+    </script>
+    <!-- Persist UTM tags-->
+    <script>
+        /**
+         * Marin Century UTM → RedPodium PreFill Passthrough
+         * Captures UTM parameters from marincentury.com URLs and appends them
+         * to RedPodium registration links as a prefill value.
+         *
+         * Example: a visitor arriving at marincentury.com/?utm_source=postcard&utm_medium=print&utm_content=novato-bikeworks&utm_campaign=2026mc
+         * will have registration links rewritten to:
+         * marincentury.redpodium.com/2026-marin-century?source=source:postcard|medium:print|content:novato-bikeworks|campaign:2026mc
+         *
+         * IMPORTANT: Replace 'source' in FIELD_NAME with the exact hidden field
+         * name configured in RedPodium's form builder.
+         */
 
-        // Watch for dynamically added links
-        var observer = new MutationObserver(function (mutations) {
-          mutations.forEach(function (m) {
-            m.addedNodes.forEach(function (node) {
-              if (node.nodeType === 1) tagLinks(node);
+        (function () {
+            "use strict";
+
+            // ── CONFIGURATION ──────────────────────────────
+            var FIELD_NAME = "registrants.source"; // ← CONFIRM THIS MATCHES REDPODIUM FIELD NAME
+            // ───────────────────────────────────────────────
+
+            document.addEventListener("DOMContentLoaded", function () {
+                var params = new URLSearchParams(window.location.search);
+
+                // Build combined source string from available UTM params
+                var parts = [];
+                [
+                    "utm_source",
+                    "utm_medium",
+                    "utm_content",
+                    "utm_campaign",
+                ].forEach(function (key) {
+                    var val = params.get(key);
+                    if (val) parts.push(key.replace("utm_", "") + ":" + val);
+                });
+
+                // No UTM params present — nothing to do
+                if (parts.length === 0) return;
+
+                var sourceValue = parts.join("|");
+
+                function tagLinks(root) {
+                    (root || document)
+                        .querySelectorAll('a[href*="redpodium"]')
+                        .forEach(function (link) {
+                            try {
+                                var url = new URL(link.href);
+                                // Don't overwrite if already tagged
+                                if (url.searchParams.has(FIELD_NAME)) return;
+                                url.searchParams.set(FIELD_NAME, sourceValue);
+                                link.href = url.toString();
+                            } catch (e) {
+                                // Skip malformed URLs
+                            }
+                        });
+                }
+
+                // Tag existing links
+                tagLinks();
+
+                // Watch for dynamically added links
+                var observer = new MutationObserver(function (mutations) {
+                    mutations.forEach(function (m) {
+                        m.addedNodes.forEach(function (node) {
+                            if (node.nodeType === 1) tagLinks(node);
+                        });
+                    });
+                });
+                observer.observe(document.body, {
+                    childList: true,
+                    subtree: true,
+                });
             });
-          });
-        });
-        observer.observe(document.body, { childList: true, subtree: true });
-      });
-    })();
-  </script>
-  <body>
-    <section class="section">
-      <div class="container">{% block content %} {% endblock content %}</div>
-    </section>
-  </body>
+        })();
+    </script>
+    <body>
+        <section class="section">
+            <div class="container">
+                {% block content %} {% endblock content %}
+            </div>
+        </section>
+    </body>
 </html>
