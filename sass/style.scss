@@ -445,6 +445,12 @@ header {
 .junior_team {
     padding: 2rem;
     background-color: white;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
 }
 
 #ebike-policy,
