@@ -3,10 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <title>Marin Century Route Quiz</title>
-        <meta
-            name="viewport"
-            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
         <meta property="og:title" content="Marin Century" />
@@ -32,52 +29,56 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="/style.css" />
-    </head>
-    <!-- Google tag (gtag.js) -->
-    <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-D8T7SPST03"
-    ></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag("js", new Date());
+        <!-- Google tag (gtag.js) -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-D8T7SPST03"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
 
-        gtag("config", "G-D8T7SPST03");
-    </script>
-    <!-- Persist UTM tags-->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var params = new URLSearchParams(window.location.search);
-            var utmKeys = [
-                "utm_source",
-                "utm_medium",
-                "utm_campaign",
-                "utm_content",
-                "utm_term",
-            ];
-            var utmString = "";
-            utmKeys.forEach(function (key) {
-                if (params.get(key)) {
-                    utmString +=
-                        "&" + key + "=" + encodeURIComponent(params.get(key));
+            gtag("config", "G-D8T7SPST03");
+        </script>
+        <!-- Persist UTM tags-->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var params = new URLSearchParams(window.location.search);
+                var utmKeys = [
+                    "utm_source",
+                    "utm_medium",
+                    "utm_campaign",
+                    "utm_content",
+                    "utm_term",
+                ];
+                var utmString = "";
+                utmKeys.forEach(function (key) {
+                    if (params.get(key)) {
+                        utmString +=
+                            "&" +
+                            key +
+                            "=" +
+                            encodeURIComponent(params.get(key));
+                    }
+                });
+                if (utmString) {
+                    document
+                        .querySelectorAll('a[href*="redpodium"]')
+                        .forEach(function (link) {
+                            var href = link.href;
+                            link.href =
+                                href +
+                                (href.indexOf("?") > -1 ? "" : "?") +
+                                utmString;
+                        });
                 }
             });
-            if (utmString) {
-                document
-                    .querySelectorAll('a[href*="redpodium"]')
-                    .forEach(function (link) {
-                        var href = link.href;
-                        link.href =
-                            href +
-                            (href.indexOf("?") > -1 ? "" : "?") +
-                            utmString;
-                    });
-            }
-        });
-    </script>
+        </script>
+    </head>
+
     <body>
         <header>
             <div id="header__notices">
@@ -154,11 +155,12 @@
                             <li><a href="/#sponsors">Sponsors</a></li>
                         </ul>
                         <div id="header__logo">
-                            <img
-                                width="200"
-                                id="header__image"
-                                src="/img/marin_century_stacked.png"
-                            />
+                            <a href="/">
+                                <img
+                                    width="200"
+                                    id="header__image"
+                                    src="/img/marin_century_stacked.png"
+                            /></a>
                         </div>
                         <ul id="header__nav-right" class="header__nav-list">
                             <li><a href="/#accomodations">Accomodations</a></li>

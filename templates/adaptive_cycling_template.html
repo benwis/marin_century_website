@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Marin Century Adaptive Cycling</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <meta property="og:title" content="Marin Century" />
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:image"
+            content="https://marincentury.com/img/steve_philips_24_marin_century.jpg"
+        />
+        <meta property="og:url" content="https://marincentury.com" />
+        <meta
+            property="og:description"
+            content="The Marin Century is happy to partner with the Kelly Brush Foundation to support adaptive cyclists to ride at our event!"
+        />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&family=BBH+Sans+Bogle&family=BBH+Sans+Hegarty&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/style.css" />
+        <!-- Google tag (gtag.js) -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-D8T7SPST03"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+
+            gtag("config", "G-D8T7SPST03");
+        </script>
+        <!-- Persist UTM tags-->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var params = new URLSearchParams(window.location.search);
+                var utmKeys = [
+                    "utm_source",
+                    "utm_medium",
+                    "utm_campaign",
+                    "utm_content",
+                    "utm_term",
+                ];
+                var utmString = "";
+                utmKeys.forEach(function (key) {
+                    if (params.get(key)) {
+                        utmString +=
+                            "&" + key + "=" + encodeURIComponent(params.get(key));
+                    }
+                });
+                if (utmString) {
+                    document
+                        .querySelectorAll('a[href*="redpodium"]')
+                        .forEach(function (link) {
+                            var href = link.href;
+                            link.href =
+                                href +
+                                (href.indexOf("?") > -1 ? "" : "?") +
+                                utmString;
+                        });
+                }
+            });
+        </script>
+    </head>
+
+    <body>
+        <div class="wrapper">
+        <header>
+            <div id="header__notices">
+                Marin Century 2026 is on August 1st! &rarr;
+            </div>
+            <div id="header__main">
+                <div id="header__mobile-menu">
+                    <div id="header__logo-mobile">
+                        <a href="/">
+                        <img
+                            id="header__image"
+                            src="/img/marin_century_stacked.png"
+                        />
+                        </a>
+                    </div>
+
+                    <input
+                        type="checkbox"
+                        name="menu-toggle"
+                        id="menu-toggle"
+                    />
+
+                    <label for="menu-toggle" id="menu-toggle-label">
+                        <svg
+                            id="show-menu-icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 17h-12v-2h12v2zm0-4h-12v-2h12v2zm0-4h-12v-2h12v2z"
+                            />
+                        </svg>
+                        <svg
+                            id="hide-menu-icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.151 17.943l-4.143-4.102-4.117 4.159-1.833-1.833 4.104-4.157-4.162-4.119 1.833-1.833 4.155 4.102 4.106-4.16 1.849 1.849-4.1 4.141 4.157 4.104-1.849 1.849z"
+                            />
+                        </svg>
+                    </label>
+
+                    <nav id="header__mobile-nav">
+                        <ul id="header__mobile-nav-list">
+                            <li><a href="/#routes">Routes</a></li>
+                            <li><a href="/#details">Details</a></li>
+                            <li><a href="/#volunteering">Volunteering</a></li>
+                            <li><a href="/#sponsors">Sponsors</a></li>
+                            <li><a href="/#accomodations">Accomodations</a></li>
+                            <li>
+                                <a href="/#merch" class="highlight"
+                                    >Merchandise</a
+                                >
+                            </li>
+                            <li><a href="/#faq">FAQ</a></li>
+                            <li>
+                                <a
+                                    href="https://marincentury.redpodium.com/2026-marin-century"
+                                    >Register</a
+                                >
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div id="header__desktop-menu">
+                    <nav id="header__desktop-nav">
+                        <ul id="header__nav-left" class="header__nav-list">
+                            <li><a href="/#routes">Routes</a></li>
+                            <li><a href="/#details">Details</a></li>
+                            <li><a href="/#volunteering">Volunteering</a></li>
+                            <li><a href="/#sponsors">Sponsors</a></li>
+                        </ul>
+                        <div id="header__logo">
+                            <a href="/">
+                            <img
+                                width="200"
+                                id="header__image"
+                                src="/img/marin_century_stacked.png"
+                            />
+                            </a>
+                        </div>
+                        <ul id="header__nav-right" class="header__nav-list">
+                            <li><a href="/#accomodations">Accomodations</a></li>
+                            <li>
+                                <a href="/#merch" class="highlight"
+                                    >Merchandise</a
+                                >
+                            </li>
+                            <li><a href="/#faq">FAQ</a></li>
+                            <li>
+                                <a
+                                    href="https://marincentury.redpodium.com/2026-marin-century"
+                                    >Register</a
+                                >
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main class="section">
+            <div class="adaptive-container">
+                <div id="club-rides__items" class="layout-2col">
+                    <div class="ride route-1">
+                     <img src="/img/steve_philips_24_marin_century.jpg" alt="Steve Philips riding his adaptive bicycle in the 2024 Marin Century"/>
+                    </div>
+
+                    <div class="ride route-2">
+                        <h4 class="ride__heading">
+                            <span class="ride__day_of_the_week">Adaptive Cycling Program</span>
+                        </h4>
+                        <div class="ride__extras">
+                            <p>
+                                New this year, we are inviting adaptive cyclists to join in the fun, for FREE. We have adjusted the 37 mile, <a href="/#routes">Geronimo</a> route to make it accessible to adaptive riders so they can have the same incredible experience as all two - wheeled cyclists.
+                                The 37-mile course travels through beautiful, rural, San Geronimo Valley and along the scenic Nicasio Valley Reservoir. After a trip under towering redwood trees, it climbs back to the finish line. There is one rest stop at mile 16, with beverages, snacks, coffee, fruit, and freshly baked pastries. There are also three designated water stops for additional support. The post-ride celebration includes live musicians, an all-you-can-eat feast, gelato, desserts, cold drinks, and beer, at a spectacular lake-side venue.
+                            </p>
+
+                                <h4>DETAILS and ACCESSIBILITY:</h4>
+                                <ul>
+                                    <li>                                Disabled parking spots near the start/finish line.
+</li>
+<li>                                ADA-compliant portable toilets at the start/finish and the one rest stop at mile 16
+</li>
+<li>                                Hospital-grade wheelchair to allow riders to access the portalet at the rest stop.
+</li>
+<li>                                Dedicated follow/SAG vehicle
+</li>
+<li>                                E-assist bikes are welcome
+</li>
+                                </ul>
+
+                                <p>
+                                The route is on open, 100% paved roads
+                                Elevation gain is over 2,200 feet with a maximum gradient of 9%, but average grades on sustained climbs are 4 - 6%
+                                Visibility flags are required on hand cycles and recumbent bicycles
+                                Rider should carry two spare inner tubes if wheels are not standard 700cc
+                                The finish party area is on a grassy field, fairly flat, with some uneven terrain
+
+
+                            </p>
+
+                            <p>Any other questions or concerns, feel free to reach out <a href="mailto:centuryregistration@marincyclists.com"
+                                >here</a>
+                            </p>
+                        </div>
+                    </div>
+                {% block content %} {% endblock content %}
+            </div>
+        </main>
+        <footer>
+            <div class="page-column">
+                <div class="site-column">
+                    <div id="footer-links">
+                        <a
+                            href="https://marincentury.redpodium.com/2026-marin-century"
+                            >Register</a
+                        >
+                        <a href="mailto:centuryregistration@marincyclists.com"
+                            >Contact Us</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    </body>
+</html>
