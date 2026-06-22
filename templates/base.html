@@ -45,80 +45,213 @@
             </script>
             <!-- Persist UTM tags-->
             <script>
-                /**
-                 * Marin Century UTM → RedPodium PreFill Passthrough
-                 * Captures UTM parameters from marincentury.com URLs and appends them
-                 * to RedPodium registration links as a prefill value.
-                 *
-                 * Example: a visitor arriving at marincentury.com/?utm_source=postcard&utm_medium=print&utm_content=novato-bikeworks&utm_campaign=2026mc
-                 * will have registration links rewritten to:
-                 * marincentury.redpodium.com/2026-marin-century?source=source:postcard|medium:print|content:novato-bikeworks|campaign:2026mc
-                 *
-                 * IMPORTANT: Replace 'source' in FIELD_NAME with the exact hidden field
-                 * name configured in RedPodium's form builder.
-                 */
+            /**
+             * Marin Century UTM → RedPodium PreFill Passthrough
+             *
+             * Captures UTM parameters from the current marincentury.com URL and appends them
+             * to RedPodium registration links so attribution carries into registration.
+             *
+             * Sends BOTH:
+             *   1) A readable composite string in the hidden field (registrants.source),
+             *      e.g. source:postcard|medium:print|content:novato-bikeworks|campaign:2026mc
+             *   2) The raw utm_* params (and common click IDs) as separate query params,
+             *      so RedPodium / GA4 can read them natively.
+             *
+             * Single-visit attribution only — no localStorage, no referrer inference.
+             * Recovers UTMs from malformed hash URLs like /#register?utm_source=postcard
+             * because the site nav uses hash anchors (#routes, #register, etc.).
+             *
+             * FIELD_NAME is confirmed to match the RedPodium hidden field.
+             */
+            (function () {
+              "use strict";
 
-                (function () {
-                    "use strict";
+              // ── CONFIGURATION ──────────────────────────────
+              var REDPODIUM_HOST = "marincentury.redpodium.com";
+              var FIELD_NAME = "registrants.source";
+              // ───────────────────────────────────────────────
 
-                    // ── CONFIGURATION ──────────────────────────────
-                    var FIELD_NAME = "registrants.source"; // ← CONFIRM THIS MATCHES REDPODIUM FIELD NAME
-                    // ───────────────────────────────────────────────
+              var UTM_KEYS = [
+                "utm_source",
+                "utm_medium",
+                "utm_content",
+                "utm_campaign",
+                "utm_term"
+              ];
 
-                    document.addEventListener("DOMContentLoaded", function () {
-                        var params = new URLSearchParams(window.location.search);
+              var CLICK_ID_KEYS = [
+                "gclid",
+                "gbraid",
+                "wbraid",
+                "fbclid",
+                "mc_cid",
+                "mc_eid"
+              ];
 
-                        // Build combined source string from available UTM params
-                        var parts = [];
-                        [
-                            "utm_source",
-                            "utm_medium",
-                            "utm_content",
-                            "utm_campaign",
-                        ].forEach(function (key) {
-                            var val = params.get(key);
-                            if (val) parts.push(key.replace("utm_", "") + ":" + val);
-                        });
+              // Light sanitizing so the composite value can't break the key:value|... format.
+              function clean(value) {
+                return String(value)
+                  .replace(/[|:]/g, "-")
+                  .replace(/\s+/g, "_")
+                  .substring(0, 120);
+              }
 
-                        // No UTM params present — nothing to do
-                        if (parts.length === 0) return;
+              // Reads params from the query string AND from a malformed hash like
+              // /#register?utm_source=postcard. Real query string wins on conflicts.
+              function getAllParams() {
+                var params = new URLSearchParams(window.location.search);
 
-                        var sourceValue = parts.join("|");
+                if (window.location.hash && window.location.hash.indexOf("?") !== -1) {
+                  var hashQuery = window.location.hash.split("?").slice(1).join("?");
+                  var hashParams = new URLSearchParams(hashQuery);
+                  hashParams.forEach(function (value, key) {
+                    if (!params.has(key)) params.set(key, value);
+                  });
+                }
 
-                        function tagLinks(root) {
-                            (root || document)
-                                .querySelectorAll('a[href*="redpodium"]')
-                                .forEach(function (link) {
-                                    try {
-                                        var url = new URL(link.href);
-                                        // Don't overwrite if already tagged
-                                        if (url.searchParams.has(FIELD_NAME)) return;
-                                        url.searchParams.set(FIELD_NAME, sourceValue);
-                                        link.href = url.toString();
-                                    } catch (e) {
-                                        // Skip malformed URLs
-                                    }
-                                });
-                        }
+                return params;
+              }
 
-                        // Tag existing links
-                        tagLinks();
+              function hostFromUrl(url) {
+                try {
+                  return new URL(url).hostname.replace(/^www\./, "");
+                } catch (e) {
+                  return "";
+                }
+              }
 
-                        // Watch for dynamically added links
-                        var observer = new MutationObserver(function (mutations) {
-                            mutations.forEach(function (m) {
-                                m.addedNodes.forEach(function (node) {
-                                    if (node.nodeType === 1) tagLinks(node);
-                                });
-                            });
-                        });
-                        observer.observe(document.body, {
-                            childList: true,
-                            subtree: true,
-                        });
+              // Fallback when no UTMs are present: classify document.referrer into
+              // organic / social / referral / direct. Returns [] for direct (own site,
+              // RedPodium, or no referrer) so nothing gets tagged in that case.
+              function inferFromReferrer() {
+                var refHost = hostFromUrl(document.referrer);
+                var ownHost = window.location.hostname.replace(/^www\./, "");
+
+                if (!refHost || refHost === ownHost || refHost === REDPODIUM_HOST) {
+                  return [];
+                }
+
+                var searchEngines = {
+                  "google.com": "google",
+                  "bing.com": "bing",
+                  "duckduckgo.com": "duckduckgo",
+                  "search.yahoo.com": "yahoo",
+                  "yahoo.com": "yahoo",
+                  "ecosia.org": "ecosia"
+                };
+
+                var socialSites = {
+                  "facebook.com": "facebook",
+                  "m.facebook.com": "facebook",
+                  "instagram.com": "instagram",
+                  "l.instagram.com": "instagram",
+                  "linkedin.com": "linkedin",
+                  "t.co": "twitter",
+                  "x.com": "x",
+                  "twitter.com": "twitter"
+                };
+
+                var source = refHost;
+                var medium = "referral";
+
+                Object.keys(searchEngines).forEach(function (host) {
+                  if (refHost === host || refHost.endsWith("." + host)) {
+                    source = searchEngines[host];
+                    medium = "organic";
+                  }
+                });
+
+                Object.keys(socialSites).forEach(function (host) {
+                  if (refHost === host || refHost.endsWith("." + host)) {
+                    source = socialSites[host];
+                    medium = "social";
+                  }
+                });
+
+                return [
+                  "source:" + clean(source),
+                  "medium:" + clean(medium)
+                ];
+              }
+
+              document.addEventListener("DOMContentLoaded", function () {
+                var params = getAllParams();
+
+                // Build the readable composite string from whatever UTMs are present.
+                var parts = [];
+                UTM_KEYS.forEach(function (key) {
+                  var val = params.get(key);
+                  if (val) parts.push(key.replace("utm_", "") + ":" + clean(val));
+                });
+
+                // Collect raw params to pass through natively.
+                var passthrough = {};
+                UTM_KEYS.concat(CLICK_ID_KEYS).forEach(function (key) {
+                  var val = params.get(key);
+                  if (val) passthrough[key] = val;
+                });
+
+                // No UTM composite present — fall back to referrer inference.
+                // (UTM always wins; inference only fills the gap.)
+                if (parts.length === 0) {
+                  parts = inferFromReferrer();
+                }
+
+                // Nothing to attribute — leave links untouched.
+                if (parts.length === 0 && Object.keys(passthrough).length === 0) return;
+
+                var sourceValue = parts.join("|");
+
+                function tagLink(link) {
+                  if (!link || !link.href) return;
+                  try {
+                    var url = new URL(link.href);
+
+                    // Exact host match — avoids tagging unrelated links that merely
+                    // contain the substring "redpodium".
+                    if (url.hostname !== REDPODIUM_HOST) return;
+
+                    // Set the composite hidden field (don't overwrite if already tagged).
+                    if (sourceValue && !url.searchParams.has(FIELD_NAME)) {
+                      url.searchParams.set(FIELD_NAME, sourceValue);
+                    }
+
+                    // Pass through raw utm_* and click IDs (don't overwrite existing).
+                    Object.keys(passthrough).forEach(function (key) {
+                      if (!url.searchParams.has(key)) {
+                        url.searchParams.set(key, passthrough[key]);
+                      }
                     });
-                })();
+
+                    link.href = url.toString();
+                  } catch (e) {
+                    // Skip malformed URLs.
+                  }
+                }
+
+                function tagLinks(root) {
+                  var scope = root || document;
+                  if (!scope.querySelectorAll) return;
+                  scope.querySelectorAll("a[href]").forEach(tagLink);
+                }
+
+                // Tag links present at load.
+                tagLinks();
+
+                // Tag links added later (dynamic nav, etc.).
+                var observer = new MutationObserver(function (mutations) {
+                  mutations.forEach(function (m) {
+                    m.addedNodes.forEach(function (node) {
+                      if (node.nodeType === 1) tagLinks(node);
+                    });
+                  });
+                });
+
+                observer.observe(document.body, { childList: true, subtree: true });
+              });
+            })();
             </script>
+
     </head>
 
     <body>

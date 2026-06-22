@@ -469,6 +469,20 @@ header {
 #adaptive a {
     color: white;
 }
+
+#topNotificationBanner {
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--color-2);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+#topNotificationBanner a {
+    color: white;
+}
+
 #ebike-policy,
 #faq {
     margin-top: 3rem;
